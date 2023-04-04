@@ -22,7 +22,7 @@ main(void){
 //DANIEL GAMEPLAYS
 //Pe_brauler
 //Rafinha
-//Arthur
+//Art
 
 //todos conseguiram
 
