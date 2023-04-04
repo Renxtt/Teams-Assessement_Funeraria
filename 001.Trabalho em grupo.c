@@ -24,6 +24,8 @@ main(void){
 //Rafinha
 //Arthur
 
+//todos conseguiram
+
 //fazendo funeraria
 
 	//cadastro
