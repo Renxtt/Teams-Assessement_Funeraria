@@ -14,7 +14,7 @@
 //Pe_brauler
 //Arthur
 
-//Objetivo: 
+//Objetivo: Construir uma simulação de um site de uma funeraria (o mais complleta possivel)
 
 enum{
 		
