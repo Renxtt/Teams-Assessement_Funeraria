@@ -22,6 +22,8 @@ main(void){
 //Allan
 //Eli
 //DANIEL GAMEPLAYS
+//Pe_brauler
+
 	//printar informações sobre a funeraria -1
 		
 		//nome da funeraria
