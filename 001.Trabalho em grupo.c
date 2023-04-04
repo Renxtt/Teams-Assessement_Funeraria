@@ -22,8 +22,8 @@ main(void){
 //DANIEL GAMEPLAYS
 //Pe_brauler
 //Rafinha
+//Arthur
 
-	
 //fazendo funeraria
 
 	//cadastro
