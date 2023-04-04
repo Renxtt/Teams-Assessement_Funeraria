@@ -26,29 +26,29 @@ main(void){
 	//CADASTRO	
 	
 	//INFO FUNERÁRIA
-	//nome da funeraria
-	//telefone da funeraria
-	//endereço funeraria
-	//horaria de trabalho	
+		//nome da funeraria
+		//telefone da funeraria
+		//endereço funeraria
+		//horaria de trabalho	
 	
 	//CADASTRO PESSOA FÍSICA
-	//nome pessoa
-	//data nascimento pessoa (se de menor cancelar cadastro)
-	//cpf pessoa
-	//email pessoa
-	//comprovação de relação com morto
+		//nome pessoa
+		//data nascimento pessoa (se de menor cancelar cadastro)
+		//cpf pessoa
+		//email pessoa
+		//comprovação de relação com morto
 	
 	//CADASTRO MORTO
-	//cpf do morto
-	//nome do morto
-	//altura morto
-	//largura morto
-	//peso morto
+		//cpf do morto (para checar se ele realmente esta morto)
+		//nome do morto
+		//altura morto
+		//largura morto
+		//peso morto
 	
 	//SELEÇÃO CERIMONIA
-	//local
-	//data(dia)
-	//numero convidados - informar preço por convidado
+		//local
+		//data(dia)
+		//numero convidados - informar preço por convidado
 	
 	//decoração - opcional
 		//flores e velas
