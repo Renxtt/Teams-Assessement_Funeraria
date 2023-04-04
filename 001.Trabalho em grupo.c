@@ -15,15 +15,19 @@ main(void){
 	SetConsoleCP(cp);
 	SetConsoleOutputCP(cp);
 	
-	
-//fazendo funeraria
 
-	//cadastro
+
 //Allan
 //Eli
 //DANIEL GAMEPLAYS
 //Pe_brauler
 //Rafinha
+
+	
+//fazendo funeraria
+
+	//cadastro
+
 	//printar informações sobre a funeraria -1
 		
 		//nome da funeraria
