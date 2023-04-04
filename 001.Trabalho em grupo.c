@@ -14,6 +14,8 @@
 //Pe_brauler
 //Arthur
 
+//Objetivo: 
+
 enum{
 		
 	TECLA_ESC = 27,
