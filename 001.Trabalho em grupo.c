@@ -23,7 +23,7 @@ main(void){
 //Eli
 //DANIEL GAMEPLAYS
 //Pe_brauler
-
+//Rafinha
 	//printar informações sobre a funeraria -1
 		
 		//nome da funeraria
