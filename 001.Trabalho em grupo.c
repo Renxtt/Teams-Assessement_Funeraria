@@ -5,9 +5,13 @@
 #include <windows.h>
 #include <math.h>
 #include <time.h>
+//EQUIPE:
+//Allan
+//Eli
+//DANIEL GAMEPLAYS
+//Pe_brauler
 
 main(void){
-	
 	setlocale(LC_ALL, "portuguese");
 	unsigned int cp = 1252;
 	unsigned int cpin = GetConsoleCP();
@@ -15,87 +19,57 @@ main(void){
 	SetConsoleCP(cp);
 	SetConsoleOutputCP(cp);
 	
+//VARIÁVEIS
 
-
-//Allan
-//Eli
-//DANIEL GAMEPLAYS
-//Pe_brauler
-//Rafinha
-//Art
-
-//todos conseguiram
-
-//fazendo funeraria
-
-	//cadastro
-
-	//printar informações sobre a funeraria -1
-		
-		//nome da funeraria
-		
-		//desde quando ela esta em funcionamento
-		
-		//horaria de trabalho
-		
-		//telefone da funeraria
-		
-		//localização da funeraria
-		
+//INÍCIO CÓDIGO
 	
-	//perguntar informações pessoais
+	//INFO FUNERÁRIA
+	//nome da funeraria
+	//telefone da funeraria
+	//endereço funeraria
+	//horaria de trabalho	
 	
-		//nome da pessoa que recebera a cerimonia
+	//CADASTRO PESSOA FÍSICA
+	//nome pessoa
+	//data nascimento pessoa (se de menor cancelar cadastro)
+	//cpf pessoa
+	//email pessoa
+	//comprovação de relação com morto
 	
+	//CADASTRO MORTO
+	//cpf do morto
+	//nome do morto
+	//altura morto
+	//largura morto
+	//peso morto
 	
-		//perguntar o nome de quem vai realizar a cerimonia
+	//SELEÇÃO CERIMONIA
+	//local
+	//data(dia)
+	//numero convidados - informar preço por convidado
 	
+	//decoração - opcional
+		//flores e velas
+		//retrato do morto
 		
-		//tipo de cerimonia
+	//serviços
+		//padre
+		//cortejo
+	
+	//enterro
+		//modelos pré prontos de caixão com P M G e personalizado
+		//local do enterro
+	//cremação
+		//informar estilos pré-prontos de potes para as cinzas
 		
-			//formas da cerimonia
-			
-				//enterro
+	//transporte
+		//mortuário->local
+		//local->enterro/cremação
 				
-					//modelos pré prontos de caixão com P M G e personalizado
 	
-													
-				//cremação
-					
-					//informar estilos preprontos de potes para colocar as cinzas(5 tipos no minimo)
-					
-				//se vai ou não adicionar flores
-				
-					//se sim adicionar um preço extra pelas flores
-				
-			
-	//marcar a data da cerimonia e mostrar quanto tempo falta para essa data
-		
-	//adicionar 1000 R$ preço de transporte
-
-	//perguntar se é evento fechado
-		
-		//se for fechado
-		
-			//mostrar preço por pessoa
-		
-			// perguntar quantidade de convidados
-			
-			//perguntar nome dos candidatos
-		
-		//se não for fechado
-			
-			//apenas continuar
-			
-			//adiciona 2000 R$
-			
-	//calcular o valor da cerimonia levando em conta o preço por pessoa
-		
-		//mostrar certificado(informações gerais)
-		
-		
-		
+	//calcular o valor total da cerimonia
 	
-	
+	//imprimir nota fiscal
+		
 	return 0;
 }
