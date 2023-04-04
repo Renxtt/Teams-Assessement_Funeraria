@@ -23,6 +23,8 @@ main(void){
 
 //INÍCIO CÓDIGO
 	
+	//CADASTRO	
+	
 	//INFO FUNERÁRIA
 	//nome da funeraria
 	//telefone da funeraria
