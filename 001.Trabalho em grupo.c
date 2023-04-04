@@ -18,6 +18,8 @@ main(void){
 	
 //fazendo funeraria
 
+	//cadastro
+
 
 	//printar informações sobre a funeraria -1
 		
