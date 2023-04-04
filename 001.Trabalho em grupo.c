@@ -5,13 +5,26 @@
 #include <windows.h>
 #include <math.h>
 #include <time.h>
+#include <conio.h>
+#include <unistd.h>
 //EQUIPE:
 //Allan
 //Eli
 //DANIEL GAMEPLAYS
 //Pe_brauler
+//Arthur
 
-main(void){
+enum{
+		
+	TECLA_ESC = 27,
+	TECLA_ENTER = 13,
+	SETA_CIMA = 256 +72,
+	SETA_BAIXO = 256 + 80,
+	SETA_ESQUERDA = 256 + 75,
+	SETA_DIREITA = 256 + 77
+	
+};
+int main(void){
 	setlocale(LC_ALL, "portuguese");
 	unsigned int cp = 1252;
 	unsigned int cpin = GetConsoleCP();
