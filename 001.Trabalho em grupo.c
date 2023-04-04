@@ -20,7 +20,7 @@ main(void){
 
 	//cadastro
 //Allan
-
+//DANIEL GAMEPLAYS
 	//printar informações sobre a funeraria -1
 		
 		//nome da funeraria
