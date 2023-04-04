@@ -24,6 +24,7 @@ main(void){
 //DANIEL GAMEPLAYS
 //Pe_brauler
 //Rafinha
+//Arthur
 	//printar informações sobre a funeraria -1
 		
 		//nome da funeraria
