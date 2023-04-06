@@ -14,7 +14,7 @@
 //Pe_brauler
 //Arthur
 
-//Objetivo: Construir uma simulaÁ„o de um site de uma funeraria (o mais complleta possivel)
+//Objetivo: Construir uma simula√ß√£o de um site de uma funeraria (o mais complleta possivel)
 
 enum{
 		
@@ -34,24 +34,64 @@ int main(void){
 	SetConsoleCP(cp);
 	SetConsoleOutputCP(cp);
 	
-//VARI¡VEIS
-
-//INÕCIO C”DIGO
+//VARI√ÅVEIS
+	//cadastro pessoa f√≠sica
+	char nome[40],email[40],relacao[20],cpf[20];
+	int ano,idade,confirma;
+	//outras
+	
+//IN√çCIO C√ìDIGO
 	
 	//CADASTRO	
 	
-	//INFO FUNER¡RIA
+	//INFO FUNER√ÅRIA
 		//nome da funeraria
 		//telefone da funeraria
-		//endereÁo funeraria
+		//endere√ßo funeraria
 		//horaria de trabalho	
 	
-	//CADASTRO PESSOA FÕSICA
-		//nome pessoa
-		//data nascimento pessoa (se de menor cancelar cadastro)
-		//cpf pessoa
-		//email pessoa
-		//comprovaÁ„o de relaÁ„o com morto
+	//CADASTRO PESSOA F√çSICA
+	printf("\nCADASTRO\n\n");
+	printf("Nome: ");//nome pessoa
+	fgets(nome,40,stdin);
+	printf("CPF: ");//cpf pessoa
+	fgets(cpf,20,stdin);
+	printf("Ano de nascimento: ");//data nascimento pessoa (se de menor cancelar cadastro)
+	scanf("%d",&ano);
+	idade=2023-ano;
+		if(idade<18){
+			printf("Menor de idade. Cadastro Indispon√≠vel.\n");
+			system("exit");
+		}
+		else{
+		printf("Rela√ß√£o com o falecido: ");//rela√ß√£o com morto
+		fgets(relacao,20,stdin);
+		scanf("%s",&relacao);
+		printf("Email para contato: ");//email pessoa
+		fgets(email,40,stdin);
+		scanf("%s",&email);
+		
+	//print informa√ß√£o
+		printf("\n\nCONFIRMA√á√ÉO CADASTRO\n\n");
+		printf("%s",nome);//nome
+		printf("%s",cpf);//cpf
+		printf("%d anos",idade);//idade
+		printf("\nRela√ß√£o com o falecido: %s",relacao);//rela√ß√£o com o falecido
+		printf("\nEmail para contato: %s",email);//email
+		
+	//confirmar cadastro
+		printf("\n\nConfirmar Cadastro?\nSim-1\tN√£o-2\n");
+		scanf("%d",&confirma);
+	
+		if(confirma==2){
+			printf("\nPor favor, refa√ßa seu cadastro.");
+			system("exit");
+		}
+		else{
+			return 0;
+		}
+	}	
+}
 	
 	//CADASTRO MORTO
 		//cpf do morto (para checar se ele realmente esta morto)
@@ -60,28 +100,28 @@ int main(void){
 		//largura morto
 		//peso morto
 	
-	//SELE«√O CERIMONIA
+	//SELE√á√ÉO CERIMONIA
 		//local
 		//data(dia)
-		//numero convidados - informar preÁo por convidado
+		//numero convidados - informar pre√ßo por convidado
 	
-	//decoraÁ„o - opcional
+	//decora√ß√£o - opcional
 		//flores e velas
 		//retrato do morto
 		
-	//serviÁos
+	//servi√ßos
 		//padre
 		//cortejo
 	
 	//enterro
-		//modelos prÈ prontos de caix„o com P M G e personalizado
+		//modelos pr√© prontos de caix√£o com P M G e personalizado
 		//local do enterro
-	//cremaÁ„o
-		//informar estilos prÈ-prontos de potes para as cinzas
+	//crema√ß√£o
+		//informar estilos pr√©-prontos de potes para as cinzas
 		
 	//transporte
-		//mortu·rio->local
-		//local->enterro/cremaÁ„o
+		//mortu√°rio->local
+		//local->enterro/crema√ß√£o
 				
 	
 	//calcular o valor total da cerimonia
