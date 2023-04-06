@@ -41,6 +41,12 @@ int main(void){
 	//outras
 	
 //INÍCIO CÓDIGO
+
+	//INFO FUNERÁRIA
+		//nome da funeraria
+		//telefone da funeraria
+		//endereço funeraria
+		//horaria de trabalho
 	printf("           funeraria santa maria\n          sua morte nossa alegria\n              desde 1986 a.C\n\n          horario de funcionamento:\n               00:00 a 23:59\n\n                 telefone:\n              -12 93774-84639\n\n     rua marcindo de sima na rua de baixo");
 	printf("\n\n\n==============================================\n");
 	printf("|                                            |\n");
@@ -50,11 +56,7 @@ int main(void){
 	getch();
 	//CADASTRO	
 	
-	//INFO FUNERÁRIA
-		//nome da funeraria
-		//telefone da funeraria
-		//endereço funeraria
-		//horaria de trabalho	
+		
 	
 	//CADASTRO PESSOA FÍSICA
 	printf("\nCADASTRO DO ORGANIZADOR\n\n");
@@ -67,35 +69,38 @@ int main(void){
 	idade=2023-ano;
 		if(idade<18){
 			printf("Menor de idade. Cadastro Indisponível.\n");
-			system("exit");
+			// fazer um Getch e adicionar menu
 		}
 		else{
-		printf("Relação com o falecido: ");//relação com morto
-		fgets(relacao,20,stdin);
-		scanf("%s",&relacao);
-		printf("Email para contato: ");//email pessoa
-		fgets(email,40,stdin);
-		scanf("%s",&email);
-		}
-	//print informação
-		printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
-		printf("%s",nome);//nome
-		printf("%s",cpf);//cpf
-		printf("%d anos",idade);//idade
-		printf("\nRelação com o falecido: %s",relacao);//relação com o falecido
-		printf("\nEmail para contato: %s",email);//email
+			printf("Relação com o falecido: ");//relação com morto
+			fgets(relacao,20,stdin);
+			scanf("%s",&relacao);
+			printf("Email para contato: ");//email pessoa
+			fgets(email,40,stdin);
+			scanf("%s",&email);
 		
-	//confirmar cadastro
-		printf("\n\nConfirmar Cadastro?\nSim-1\tNão-2\n");
-		scanf("%d",&confirma);
+		//print informação
+			printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
+			printf("%s",nome);//nome
+			printf("%s",cpf);//cpf
+			printf("%d anos",idade);//idade
+			printf("\nRelação com o falecido: %s",relacao);//relação com o falecido
+			printf("\nEmail para contato: %s",email);//email
 	
-		if(confirma==2){
-			printf("\nPor favor, refaça seu cadastro.");
-			system("exit");
+		//confirmar cadastro
+			printf("\n\nConfirmar Cadastro?\nSim-1\tNão-2\n");
+			scanf("%d",&confirma);
+		
+			if(confirma==2){
+				printf("\nPor favor, refaça seu cadastro.");
+				//Adicionar Menu aqui
+			}
+			else{
+				//Falta Coisa Paola
+			}	
 		}
-		else{
-			return 0;
-		}
+		
+
 		
 
 	
@@ -130,7 +135,7 @@ int main(void){
 		//local->enterro/cremação
 				
 	
-	//calcular o valor total da cerimonia
+	//calcular o valor total da cerimonia (Usando Juros e extras)
 	
 	//imprimir nota fiscal
 		
