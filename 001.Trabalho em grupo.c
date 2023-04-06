@@ -35,13 +35,19 @@ int main(void){
 	SetConsoleOutputCP(cp);
 	
 //VARIÁVEIS
-	//cadastro pessoa física
+	//Variaveis para cadastro pessoa física
 	char nome[40],email[40],relacao[20],cpf[20];
 	int ano,idade,confirma;
 	//outras
 	
 //INÍCIO CÓDIGO
-	
+	printf("      funeraria santa maria\n     sua morte nossa alegria\n         desde 1986 a.C\n\n     horario de funcionamento:\n          00:00 a 23:59\n\n            telefone:\n         -12 93774-84639\n\nrua marcindo de sima na rua de baixo");
+	printf("\n\n\n==============================================\n");
+	printf("|                                            |\n");
+	printf("|   \033[1;34mDe Enter para ir para O Menu_do_Inicio\033[0m   |\n");
+	printf("|                                            |\n");
+	printf("==============================================\n\n");
+	getch();
 	//CADASTRO	
 	
 	//INFO FUNERÁRIA
@@ -50,8 +56,8 @@ int main(void){
 		//endereço funeraria
 		//horaria de trabalho	
 	
-	//CADASTRO PESSOA FÍSICA (Pe_brauler)
-	printf("\nCADASTRO\n\n");
+	//CADASTRO PESSOA FÍSICA
+	printf("\nCADASTRO DO ORGANIZADOR\n\n");
 	printf("Nome: ");//nome pessoa
 	fgets(nome,40,stdin);
 	printf("CPF: ");//cpf pessoa
@@ -70,7 +76,7 @@ int main(void){
 		printf("Email para contato: ");//email pessoa
 		fgets(email,40,stdin);
 		scanf("%s",&email);
-		
+		}
 	//print informação
 		printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
 		printf("%s",nome);//nome
@@ -90,8 +96,8 @@ int main(void){
 		else{
 			return 0;
 		}
-	}	
-}
+		
+
 	
 	//CADASTRO MORTO
 		//cpf do morto (para checar se ele realmente esta morto)
