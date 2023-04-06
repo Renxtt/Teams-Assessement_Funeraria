@@ -50,7 +50,7 @@ int main(void){
 		//endereço funeraria
 		//horaria de trabalho	
 	
-	//CADASTRO PESSOA FÍSICA
+	//CADASTRO PESSOA FÍSICA (Pe_brauler)
 	printf("\nCADASTRO\n\n");
 	printf("Nome: ");//nome pessoa
 	fgets(nome,40,stdin);
