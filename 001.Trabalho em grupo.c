@@ -41,7 +41,7 @@ int main(void){
 	//outras
 	
 //INÍCIO CÓDIGO
-	printf("      funeraria santa maria\n     sua morte nossa alegria\n         desde 1986 a.C\n\n     horario de funcionamento:\n          00:00 a 23:59\n\n            telefone:\n         -12 93774-84639\n\nrua marcindo de sima na rua de baixo");
+	printf("           funeraria santa maria\n          sua morte nossa alegria\n              desde 1986 a.C\n\n          horario de funcionamento:\n               00:00 a 23:59\n\n                 telefone:\n              -12 93774-84639\n\n     rua marcindo de sima na rua de baixo");
 	printf("\n\n\n==============================================\n");
 	printf("|                                            |\n");
 	printf("|   \033[1;34mDe Enter para ir para O Menu_do_Inicio\033[0m   |\n");
