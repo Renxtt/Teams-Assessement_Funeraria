@@ -56,8 +56,8 @@ int main(void){
 	//Variaveis para cadastro de conta
 	char Cadastro_Dono[1000], Cadastro_UserName[1000];
 	char Cadastro_Senha[1000];
-	char Tentativa_UserName[1000];
-	char Tentativa_Senha[1000];
+	char Tentativa_UserName[1000], Retirada_UserNames[100][1000];
+	char Tentativa_Senha[1000], Retirada_Senhas[100][1000];
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};
@@ -67,7 +67,7 @@ int main(void){
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
 	int Contador_ch_SingUp, Contador_ch_LogIn;
-	
+	int Verificador_1V_2F=0;
 	//criando variavel para  receber arquivos
 	FILE *Arquivo_Senhas; // caso for usar o nome do arquivo é "Cofre_de_Senhas_O_Curso.txt"
 	FILE *Arquivo_UserNames; //  caso for usar o nome do arquivo é "Cofre_de_Users_O_Curso.txt"
@@ -259,7 +259,25 @@ int main(void){
 						Arquivo_Senhas = fopen("Cofre_de_Senhas_O_Curso.txt", "r");
 						
 						printf("Digite o  seu UserName: ");
+						scanf("%s", Tentativa_UserName);
 						
+						printf("Agora Digite a senha com UserName %s: ", Tentativa_UserName);
+						scanf("%s", Tentativa_Senha);
+						
+						
+						for(int i=0;i<100;i++){
+							fscanf(Arquivo_UserNames, "%s", Retirada_UserNames[i]);
+							fscanf(Arquivo_Senhas, "%s", Retirada_Senhas[i]);
+							if(strcmp(Retirada_UserNames[i], Tentativa_UserName)==0 && strcmp(Retirada_Senhas[i], Tentativa_Senha)==0){
+								Verificador_1V_2F = 1;
+							}
+						}
+						
+						if(Verificador_1V_2F){
+							printf("Olá");
+						}else{
+							printf("Tchau");
+						}
 					
 						break;
 					case 4:
