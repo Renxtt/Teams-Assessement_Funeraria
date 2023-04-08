@@ -345,7 +345,7 @@ int main(void){
 							}else if(escolha_do_Menu==4){
 								printf("\n\n\t\033[1;34mSai da sua conta e vai para área do MENU PRINCIPAL\033[0m");
 							}else if(escolha_do_Menu==5){
-								printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m")
+								printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
 							}
 							while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
 								switch (Recepcao_Tecla) {
