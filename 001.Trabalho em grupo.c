@@ -26,6 +26,15 @@ enum{
 	SETA_DIREITA = 256 + 77
 	
 };
+
+static Get_Code(void){
+	int Code = getch();
+	if(Code == 0 || Code == 224){
+		Code = 256 +getch();
+	}
+	return Code;
+}
+
 int main(void){
 	setlocale(LC_ALL, "portuguese");
 	unsigned int cp = 1252;
