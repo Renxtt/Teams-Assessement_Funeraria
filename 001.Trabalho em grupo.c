@@ -64,6 +64,7 @@ int main(void){
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
+	int Contador_ch_SingUp;
 	
 	//criando variavel para  receber arquivos
 	FILE *Arquivo_Senhas; // caso for usar o nome do arquivo é "Cofre_de_Senhas_O_Curso.txt"
@@ -224,9 +225,20 @@ int main(void){
 						printf("\n_________________________________________\n\n");
 						
 						printf("\n\n_______________________________________");
+						Contador_ch_SingUp = strlen(Cadastro_Dono);
+						for(int i=0;i<Contador_ch_SingUp;i++){
+							printf("_");
+						}
+						printf("\n");
+						printf("\nFeito isso Crie uma senha para a conta %s: ", Cadastro_Dono);
+						scanf("%s", Cadastro_Senha);
+						printf("\n_______________________________________");
+						Contador_ch_SingUp = strlen(Cadastro_Dono);
+						for(int i=0;i<Contador_ch_SingUp;i++){
+							printf("_");
+						}
+						printf("\n\n");						
 						
-						
-						printf("Feito isso Crie uma senha para a conta %s: ", Cadastro_Dono);
 						
 						break;
 					case 3:
