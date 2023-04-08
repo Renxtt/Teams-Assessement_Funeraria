@@ -41,6 +41,8 @@ static int Get_Code(void){
 
 int main(void){
 	
+	system("title Funeraria Team EQ4");
+	
 	time_t tempo;
 	srand((unsigned) time(&tempo));
 	setlocale(LC_ALL, "portuguese");
@@ -219,6 +221,23 @@ int main(void){
 						//Sing Up
 						system("Cls");
 						
+						do{
+							system("Cls");
+							printf("\nAgor Você estará entrando na área de criação de conta\n");
+							printf("na hora de criar a conta você dará três informações:\n");
+							printf("\t\tQuem é o Dono da conta que está criando\n\t\tUm UserName que servirá exclusivamente para Log In\n\t\tA Senha que Utilizara para Logar sua Conta\n");
+							printf("É aconselhado usar dados faceis de se Lembrar\n");
+							
+							
+							printf("\n\n\t======================================");
+							printf("\n\t|                                    |");
+							printf("\n\t|   \033[1;34mDe 2 ENTER para seguir adiante\033[0m   |");
+							printf("\n\t|                                    |");
+							printf("\n\t======================================\n\n\n");
+							getch();
+						}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+						
+						system("Cls");
 						Arquivo_Donos = fopen("Cofre_de_Donos_O_Curso.txt", "a");
 						Arquivo_UserNames = fopen("Cofre_de_Users_O_Curso.txt", "a");
 						Arquivo_Senhas = fopen("Cofre_de_Senhas_O_Curso.txt", "a");
@@ -467,7 +486,7 @@ int main(void){
 										}						
 										break;
 									case CHAVE_ENTER:
-										//
+										// "Assistencia para o(a) Usuário(a)", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"
 										switch (escolha_do_Menu) {
 											case 0:
 												//TODO
