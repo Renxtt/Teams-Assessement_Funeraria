@@ -218,12 +218,12 @@ int main(void){
 						
 						printf("\n\n______________________________________________________\n");
 						printf("\nDigite Somente o Primeiro Nome do Dono dessa Conta: ");
-						scanf("%s", Cadastro_Dono);
+						fgets(Cadastro_Dono, 1000, stdin);
 						printf("\n____________________________________________________\n\n");
 						
 						printf("\n\n_________________________________________\n");
 						printf("\nAgora Crie o nome de Usuario para Logar: ");
-						scanf("%s", Cadastro_UserName);
+						fgets(Cadastro_UserName, 1000, stdin);
 						printf("\n_________________________________________\n\n");
 						
 						printf("\n\n_______________________________________");
@@ -232,7 +232,7 @@ int main(void){
 							printf("_");
 						}
 						printf("\n");
-						printf("\nFeito isso Crie uma senha para a conta %s: ", Cadastro_Dono);
+						printf("\nFeito isso Crie uma senha para a conta %s ", Cadastro_Dono);
 						scanf("%s", Cadastro_Senha);
 						printf("\n_______________________________________");
 						Contador_ch_SingUp = strlen(Cadastro_Dono);
