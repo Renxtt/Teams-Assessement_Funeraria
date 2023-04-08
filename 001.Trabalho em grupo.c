@@ -30,7 +30,7 @@ enum{
 	
 };
 
-static Get_Code(void){
+static int Get_Code(void){
 	int Code = getch();
 	if(Code == 0 || Code == 224){
 		Code = 256 +getch();
@@ -273,14 +273,16 @@ int main(void){
 							fscanf(Arquivo_Donos, "%s", Retirada_Donos[i]);
 							if(strcmp(Retirada_UserNames[i], Tentativa_UserName)==0 && strcmp(Retirada_Senhas[i], Tentativa_Senha)==0){
 								Verificador_1V_2F = 1;
+								Contador_do_Dono =i;
 								
 							}
 						}
 						
 						if(Verificador_1V_2F){
 							//menu do Usuario maior 23 meun 15
-							SYSTEM("Cls");
+							system("Cls");
 							printf("CONTA LOGADA COM SUCESSO");
+							printf("\n\nVocê se conectou a conta do(a) %s", Retirada_Donos[Contador_do_Dono]);
 						}else{
 							printf("\n\n\nInfelizmente a senha ou o UserName estão incorretos\n");
 							//colocar sistema de enter para menu principal
