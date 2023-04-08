@@ -335,7 +335,55 @@ int main(void){
 							}
 							printf("\t        \033[1;32m===========================================\033[0m\n");
 							while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
-								//TODO
+								switch (Recepcao_Tecla) {
+									case SETA_CIMA:
+										if(escolha_do_Menu>0){
+											escolha_do_Menu -= 1;
+										}
+										printf("\t        \033[1;32m==============\033[1;35mMENU DO USUÁRIO\033[1;32m==============\033[0m\n");
+										for(int i=0;i<MAX_Menu_Usuario;i++){
+											if(escolha_do_Menu==i){
+												printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_USUARIO[i]);
+												for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+													printf(" ");
+												}
+												printf("\033[1;32m|\033[0m\n");
+											}else{
+												printf("\t\t\033[1;32m|\033[0m      %s", MENU_USUARIO[i]);
+												for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+													printf(" ");
+												}
+												printf("\033[1;32m|\033[0m\n");
+											}	
+										}
+										printf("\t        \033[1;32m===========================================\033[0m\n");							
+										break;
+									case SETA_BAIXO:
+										if(escolha_do_Menu<5){
+											escolha_do_Menu +=1;
+										}
+										printf("\t        \033[1;32m==============\033[1;35mMENU DO USUÁRIO\033[1;32m==============\033[0m\n");
+										for(int i=0;i<MAX_Menu_Usuario;i++){
+											if(escolha_do_Menu==i){
+												printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_USUARIO[i]);
+												for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+													printf(" ");
+												}
+												printf("\033[1;32m|\033[0m\n");
+											}else{
+												printf("\t\t\033[1;32m|\033[0m      %s", MENU_USUARIO[i]);
+												for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+													printf(" ");
+												}
+												printf("\033[1;32m|\033[0m\n");
+											}	
+										}
+										printf("\t        \033[1;32m===========================================\033[0m\n");							
+										break;
+									default:
+										//TODO
+										break;
+								}
 							}
 							
 						}else{
