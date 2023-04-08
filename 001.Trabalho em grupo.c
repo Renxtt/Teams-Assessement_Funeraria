@@ -256,6 +256,46 @@ int main(void){
 						fclose(Arquivo_UserNames);
 						fclose(Arquivo_Senhas);
 						
+						do{
+							system("Cls");
+							printf("\n\nParabens por criar uma Nova Conta\n");
+							printf("\n\n===========================================");
+							printf("\n|                                         |");
+							printf("\n|   \033[1;34mDe Enter para ir ao menu do Usuário\033[0m   |");
+							printf("\n|                                         |");
+							printf("\n===========================================\n\n\n");							
+						}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+						
+						system("Cls");
+						printf("\n\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+						for(int i=0;i<MAX_Menu_Inicial;i++){
+							if(escolha_do_Menu==i){
+								printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+								for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+									printf(" ");
+								}
+								printf("\033[1;32m|\033[0m\n");
+							}else{
+								printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+								for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+									printf(" ");
+								}
+								printf("\033[1;32m|\033[0m\n");
+							}
+						}
+						printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+						if(escolha_do_Menu==0){
+							printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+						}else if(escolha_do_Menu==1){
+							printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+						}else if(escolha_do_Menu==2){
+							printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+						}else if(escolha_do_Menu==3){
+							printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+						}else if(escolha_do_Menu==4){
+							printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+						}	
+						
 						break;
 					case 3:
 						//Log In
@@ -301,13 +341,14 @@ int main(void){
 							//menu do Usuario TOTAL 41
 							do{
 							printf("CONTA LOGADA COM SUCESSO");
+							printf("\n\nVocê se conectou a conta do(a) %s\n\n", Retirada_Donos[Contador_do_Dono]);
 							//colocar confirmação
 							printf("\n\n===========================================");
 							printf("\n|                                         |");
 							printf("\n|   \033[1;34mDe Enter para ir ao menu do Usuário\033[0m   |");
 							printf("\n|                                         |");
 							printf("\n===========================================");							
-							printf("\n\nVocê se conectou a conta do(a) %s\n\n", Retirada_Donos[Contador_do_Dono]);
+							
 							
 							}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 							system("Cls");
