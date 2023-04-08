@@ -53,11 +53,15 @@ int main(void){
 	//Variaveis para cadastro pessoa física
 	char nome[40],email[40],relacao[20],cpf[20];
 	int ano,idade,confirma;
+	//Variaveis para cadastro de conta
+	char Cadastro_Dono[1000], Cadastro_UserName[1000];
+	char Cadastro_Senha[1000];
+	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};
 	
 	
-	//Crinado variaveis Aussiliares do menu
+	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
 	
@@ -209,8 +213,20 @@ int main(void){
 						Arquivo_UserNames = fopen("Cofre_de_Users_O_Curso.txt", "a");
 						Arquivo_Senhas = fopen("Cofre_de_Senhas_O_Curso.txt", "a");
 						
+						printf("\n\n______________________________________________________\n");
+						printf("\nDigite Somente o Primeiro Nome do Dono dessa Conta: ");
+						scanf("%s", Cadastro_Dono);
+						printf("\n____________________________________________________\n\n");
+						
+						printf("\n\n_________________________________________\n");
+						printf("\nAgora Crie o nome de Usuario para Logar: ");
+						scanf("%s", Cadastro_UserName);
+						printf("\n_________________________________________\n\n");
+						
+						printf("\n\n_______________________________________");
 						
 						
+						printf("Feito isso Crie uma senha para a conta %s: ", Cadastro_Dono);
 						
 						break;
 					case 3:
