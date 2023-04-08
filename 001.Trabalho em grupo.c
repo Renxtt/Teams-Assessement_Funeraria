@@ -9,7 +9,9 @@
 #include <unistd.h>
 
 #define MAX_Menu_Inicial 5
-#define MAX_Menu_Usuario 6
+#define MAX_Menu_Usuario 4
+#define TEMPO_print_coriqueiro 700
+#define MAX_Menu_Servicos 2
 
 //EQUIPE:
 //Allan
@@ -66,7 +68,9 @@ int main(void){
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
-	char MENU_USUARIO[6][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
+	char MENU_USUARIO[6][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Serviços", "Sair/Log Out"};
+	char MENU_SERVIÇOS[2][1000] = {"Serviços Post Mortem", "Outros"};
+	char MENU_OUTROS_SERVICOS[2][1000] = {"Procurar Confirmação de Pedido", "Criar confirmação de Pedidos"};
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10], Contador_de_Casas_Usuario[10];
 	int escolha_do_Menu = 0;
@@ -363,6 +367,7 @@ int main(void){
 						}
 						printf("---\n\n");						
 						
+						//checagem de conta
 						for(int i=0;i<100;i++){
 							fscanf(Arquivo_UserNames, "%s", Retirada_UserNames[i]);
 							fscanf(Arquivo_Senhas, "%s", Retirada_Senhas[i]);
@@ -378,7 +383,6 @@ int main(void){
 							//menu do Usuario TOTAL 41
 							do{
 							printf("CONTA LOGADA COM SUCESSO");
-							printf("\n\nVocê se conectou a conta do(a) %s\n\n", Retirada_Donos[Contador_do_Dono]);
 							//colocar confirmação
 							printf("\n\n===========================================");
 							printf("\n|                                         |");
@@ -388,8 +392,57 @@ int main(void){
 							
 							
 							}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+							
+							do{
+								system("Cls");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Caso seja a sua primeira vez Logando aqui vai um Micro Tutorial\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Aparecerá um MENU parecido com o MENU PRINCIPAL\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Será divertido se você fuça-lo\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Porém\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Entretanto\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Todavia\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Se quiser dar um bom cuidado ao corpo de seu Ente querido\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Vá na parte que diz Serviços e de enter\n");
+								Sleep(TEMPO_print_coriqueiro);
+								printf("Dentro disso De enter em Serviços Post Mortem\n");
+								printf("\n\n============================");
+								printf("\n|                          |");
+								printf("\n|   \033[1;34mDe Enter para Seguir\033[0m   |");
+								printf("\n|                          |");
+								printf("\n============================");								
+							}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 							system("Cls");
 							
+							printf("\n\n\t\t\033[2;37mConectando A conta do(a) %s\033[0m", Retirada_Donos[Contador_do_Dono]);
+							for(int i=0;i<3;i++){
+								Sleep(500);
+								printf("\033[1;34m.\033[0m");
+							}
+							Sleep(rand() % 3000+1);
+							system("Cls");
+							printf("\n\n\t\tConectado a Conta do(a) %s\n\n", Retirada_Donos[Contador_do_Dono]);
+							Sleep(2000);						
+							system("Cls");
+							
+							printf("\n\n\t\t\033[2;37mConectando ao MENU DO USUÁRIO\033[0m");
+							for(int i=0;i<3;i++){
+								Sleep(500);
+								printf("\033[1;34m.\033[0m");
+							}
+							Sleep(rand() % 3000+1);
+							system("Cls");
+							printf("\n\n\t\tConectado ao MENU DO USUÁRIO\n\n");
+							Sleep(2000);
+							
+							system("Cls");
 							for(int i=0;i<MAX_Menu_Usuario;i++){
 								Contador_de_Casas_Usuario[i] = strlen(MENU_USUARIO[i]);
 								Contador_de_Casas_Usuario[i] = Contador_de_Casas_Usuario[i] + 3;
@@ -421,12 +474,8 @@ int main(void){
 							}else if(escolha_do_Menu==1){
 								printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
 							}else if(escolha_do_Menu==2){
-								printf("\n\n\t\033[1;34mServe para deletar a sua conta\033[0m\n\n");
-							}else if(escolha_do_Menu==3){
 								printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
-							}else if(escolha_do_Menu==4){
-								printf("\n\n\t\033[1;34mSai da sua conta e vai para área do MENU PRINCIPAL\033[0m");
-							}else if(escolha_do_Menu==5){
+							}else if(escolha_do_Menu==3){
 								printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
 							}
 							while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
@@ -458,18 +507,14 @@ int main(void){
 										}else if(escolha_do_Menu==1){
 											printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
 										}else if(escolha_do_Menu==2){
-											printf("\n\n\t\033[1;34mServe para deletar a sua conta\033[0m\n\n");
-										}else if(escolha_do_Menu==3){
 											printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
-										}else if(escolha_do_Menu==4){
-											printf("\n\n\t\033[1;34mSai da sua conta e vai para área do MENU PRINCIPAL\033[0m");
-										}else if(escolha_do_Menu==5){
+										}else if(escolha_do_Menu==3){
 											printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
 										}				
 										break;
 									case SETA_BAIXO:
 										system("Cls");
-										if(escolha_do_Menu<5){
+										if(escolha_do_Menu<3){
 											escolha_do_Menu +=1;
 										}
 										printf("\t        \033[1;32m==============\033[1;35mMENU DO USUÁRIO\033[1;32m==============\033[0m\n");
@@ -494,33 +539,53 @@ int main(void){
 										}else if(escolha_do_Menu==1){
 											printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
 										}else if(escolha_do_Menu==2){
-											printf("\n\n\t\033[1;34mServe para deletar a sua conta\033[0m\n\n");
-										}else if(escolha_do_Menu==3){
 											printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
-										}else if(escolha_do_Menu==4){
-											printf("\n\n\t\033[1;34mSai da sua conta e vai para área do MENU PRINCIPAL\033[0m");
-										}else if(escolha_do_Menu==5){
+										}else if(escolha_do_Menu==3){
 											printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
 										}						
 										break;
 									case CHAVE_ENTER:
-										// "Assistencia para o(a) Usuário(a)", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"
+										// "Assistencia para o(a) Usuário(a)", "Configurações", "Serviços", "Log Out", "Sair"
 										switch (escolha_do_Menu) {
 											case 0:
-												//TODO
+												//Assistencia para o(a) Usuário(a)
 												break;
 											case 1:
-												//TODO
+												//Configurações
 												break;
 											case 2:
-												//TODO
-											case 3:
-												//TODO
+												//Serviços
 												break;
-											case 4:
-												//TODO
-											case 5:
-												//TODO
+											case 3:
+												//Sair
+												system("Cls");
+												printf("\n\n\t\tSaindo da Conta");
+												for(int i=0;i<=3;i++){
+													Sleep(500);
+													printf(".");
+												}
+												system("Cls");
+												Sleep(500);
+												printf("\n\n\t\t\033[2;37mConta sendo Finalizada\033[0m\n\n");
+												Sleep(rand() % 5000);
+												system("Cls");
+												printf("\n\n\t\tConta Finalizada\n\n");
+												Sleep(rand() % 5000);
+												system("Cls");
+												printf("Agora:\n");
+												printf("\n\n\t\tSaindo");
+												for(int i=0;i<=3;i++){
+													Sleep(500);
+													printf(".");
+												}
+												system("Cls");
+												Sleep(500);
+												printf("\n\n\t\t\033[2;37mSeção sendo Finalizada\033[0m\n\n");
+												Sleep(rand() % 5000);
+												system("Cls");
+												printf("\n\n\t\tSeção Finalizada\n\n");
+												exit(0);
+												return 0;						
 												break;
 										}
 										break;
@@ -548,12 +613,8 @@ int main(void){
 										}else if(escolha_do_Menu==1){
 											printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
 										}else if(escolha_do_Menu==2){
-											printf("\n\n\t\033[1;34mServe para deletar a sua conta\033[0m\n\n");
-										}else if(escolha_do_Menu==3){
 											printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
-										}else if(escolha_do_Menu==4){
-											printf("\n\n\t\033[1;34mSai da sua conta e vai para área do MENU PRINCIPAL\033[0m");
-										}else if(escolha_do_Menu==5){
+										}else if(escolha_do_Menu==3){
 											printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
 										}
 										printf("\t        Tecla Não Correspondente");									
