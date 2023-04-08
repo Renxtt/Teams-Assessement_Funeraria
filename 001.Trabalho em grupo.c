@@ -59,14 +59,14 @@ int main(void){
 	char Cadastro_Senha[1000];
 	char Tentativa_UserName[1000], Retirada_UserNames[100][1000];
 	char Tentativa_Senha[1000], Retirada_Senhas[100][1000];
-	char Retirada_Donos[100][1000], Apresentacao_Dono[1000];
+	char Retirada_Donos[100][1000];
 	
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
 	char MENU_USUARIO[6][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
 	//Crinado variaveis auxiliares
-	int Contador_de_Casas_inicial[10];
+	int Contador_de_Casas_inicial[10], Contador_de_Casas_Usuario[10];
 	int escolha_do_Menu = 0;
 	int Contador_ch_SingUp, Contador_ch_LogIn;
 	int Verificador_1V_2F=0;
@@ -294,7 +294,7 @@ int main(void){
 						}
 						
 						if(Verificador_1V_2F){
-							//menu do Usuario maior 23 meun 15 TOTAL 29
+							//menu do Usuario TOTAL 41
 							do{
 							printf("CONTA LOGADA COM SUCESSO");
 							//colocar confirmação
@@ -307,16 +307,33 @@ int main(void){
 							
 							}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 							system("Cls");
+							
+							for(int i=0;i<MAX_Menu_Usuario;i++){
+								Contador_de_Casas_Usuario[i] = strlen(MENU_USUARIO[i]);
+								Contador_de_Casas_Usuario[i] = Contador_de_Casas_Usuario[i] + 3;
+								Contador_de_Casas_Usuario[i] = 41 - Contador_de_Casas_Usuario[i];
+								Contador_de_Casas_Usuario[i] = Contador_de_Casas_Usuario[i] - 3;
+							}
+							
+							
 							escolha_do_Menu = 0;
-							printf("\t        \033[1;32m===========\033[1;35mMENU DO USUÁRIO\033[1;32m===========\033[0m\n");
+							printf("\t        \033[1;32m==============\033[1;35mMENU DO USUÁRIO\033[1;32m==============\033[0m\n");
 							for(int i=0;i<MAX_Menu_Usuario;i++){
 								if(escolha_do_Menu==i){
-									printf("\t\t| \033[4;31m-> %s\033[0m\n", MENU_USUARIO[i]);
+									printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_USUARIO[i]);
+									for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+										printf(" ");
+									}
+									printf("\033[1;32m|\033[0m\n");
 								}else{
-									printf("\t\t|    %s\n", MENU_USUARIO[i]);
-								}
-								
-							}	
+									printf("\t\t\033[1;32m|\033[0m      %s", MENU_USUARIO[i]);
+									for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+										printf(" ");
+									}
+									printf("\033[1;32m|\033[0m\n");
+								}	
+							}
+							printf("\t        \033[1;32m===========================================\033[0m\n");
 							
 						}else{
 							printf("\n\n\nInfelizmente a senha ou o UserName estão incorretos\n");
