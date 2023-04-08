@@ -71,6 +71,7 @@ int main(void){
 	int Contador_ch_SingUp, Contador_ch_LogIn;
 	int Verificador_1V_2F=0;
 	int Contador_do_Dono;
+	int Recepcao_Tecla;
 	//criando variavel para  receber arquivos
 	FILE *Arquivo_Senhas; // caso for usar o nome do arquivo é "Cofre_de_Senhas_O_Curso.txt"
 	FILE *Arquivo_UserNames; //  caso for usar o nome do arquivo é "Cofre_de_Users_O_Curso.txt"
@@ -83,14 +84,17 @@ int main(void){
 		//telefone da funeraria
 		//endereço funeraria
 		//horaria de trabalho
+	do{
+		system("Cls");
 	printf("           funeraria santa maria\n          sua morte nossa alegria\n              desde 1986 a.C\n\n          horario de funcionamento:\n               00:00 a 23:59\n\n                 telefone:\n              -12 93774-84639\n\n     rua marcindo de sima na rua de baixo");
 	printf("\n\n\n==============================================\n");
 	printf("|                                            |\n");
 	printf("|   \033[1;34mDe Enter para ir para O Menu_do_Inicio\033[0m   |\n");
 	printf("|                                            |\n");
 	printf("==============================================\n\n");
-	getch();
+	}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 	system("Cls");
+	
 	//CADASTRO
 	
 		//Definindo Menu principal
@@ -131,7 +135,7 @@ int main(void){
 		printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
 	}
 	
-	int Recepcao_Tecla;
+	
 	while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
 		switch (Recepcao_Tecla) {
 			case SETA_CIMA:
@@ -421,15 +425,107 @@ int main(void){
 											printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
 										}						
 										break;
+									case CHAVE_ENTER:
+										//
+										switch (escolha_do_Menu) {
+											case 0:
+												//TODO
+												break;
+											case 1:
+												//TODO
+												break;
+											case 2:
+												//TODO
+											case 3:
+												//TODO
+												break;
+											case 4:
+												//TODO
+											case 5:
+												//TODO
+												break;
+										}
+										break;
 									default:
 										//TODO
+										printf("\t        \033[1;32m==============\033[1;35mMENU DO USUÁRIO\033[1;32m==============\033[0m\n");
+										for(int i=0;i<MAX_Menu_Usuario;i++){
+											if(escolha_do_Menu==i){
+												printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_USUARIO[i]);
+												for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+													printf(" ");
+												}
+												printf("\033[1;32m|\033[0m\n");
+											}else{
+												printf("\t\t\033[1;32m|\033[0m      %s", MENU_USUARIO[i]);
+												for(int j=0;j<Contador_de_Casas_Usuario[i];j++){
+													printf(" ");
+												}
+												printf("\033[1;32m|\033[0m\n");
+											}	
+										}
+										printf("\t        \033[1;32m===========================================\033[0m\n");	
+										if(escolha_do_Menu==0){
+											printf("\n\n\t\033[1;34mTe dá acesso a assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
+										}else if(escolha_do_Menu==1){
+											printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
+										}else if(escolha_do_Menu==2){
+											printf("\n\n\t\033[1;34mServe para deletar a sua conta\033[0m\n\n");
+										}else if(escolha_do_Menu==3){
+											printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
+										}else if(escolha_do_Menu==4){
+											printf("\n\n\t\033[1;34mSai da sua conta e vai para área do MENU PRINCIPAL\033[0m");
+										}else if(escolha_do_Menu==5){
+											printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
+										}
+										printf("\t        Tecla Não Correspondente");									
 										break;
 								}
 							}
 							
 						}else{
-							printf("\n\n\nInfelizmente a senha ou o UserName estão incorretos\n");
-							//colocar sistema de enter para menu principal
+							
+							do{
+							system("Cls");
+							printf("\n\n\n\033[1;32mInfelizmente a senha ou o UserName estão incorretos\n");
+							printf("Verifique se a Conta que esta tentando acessar exista\n");
+							printf("Se essa conta for inexistente faça o \033[4;97mSing Up\033[0m\n\n");
+							
+							printf("\n\n\t==========================================");
+							printf("\n\t|                                        |");
+							printf("\n\t|   \033[1;34mDe ENTER para ir ao MENU PRINCIPAL\033[0m   |");
+							printf("\n\t|                                        |");
+							printf("\n\t==========================================");
+							}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+							system("Cls");
+							printf("\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+							for(int i=0;i<MAX_Menu_Inicial;i++){
+								if(escolha_do_Menu==i){
+									printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+									for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+										printf(" ");
+									}
+									printf("\033[1;32m|\033[0m\n");
+								}else{
+									printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+									for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+										printf(" ");
+									}
+									printf("\033[1;32m|\033[0m\n");
+								}
+							}
+							printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+							if(escolha_do_Menu==0){
+								printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+							}else if(escolha_do_Menu==1){
+								printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+							}else if(escolha_do_Menu==2){
+								printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+							}else if(escolha_do_Menu==3){
+								printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+							}else if(escolha_do_Menu==4){
+								printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+							}	
 						}
 					
 						break;
