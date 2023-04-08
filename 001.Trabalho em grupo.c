@@ -237,8 +237,15 @@ int main(void){
 						for(int i=0;i<Contador_ch_SingUp;i++){
 							printf("_");
 						}
-						printf("\n\n");						
+						printf("\n\n");
 						
+						fprintf(Arquivo_Donos, "%s\n", Cadastro_Dono);
+						fprintf(Arquivo_UserNames, "%s\n", Cadastro_UserName);
+						fprintf(Arquivo_Senhas, "%s\n", Cadastro_Senha);
+										
+						fclose(Arquivo_Donos);
+						fclose(Arquivo_UserNames);
+						fclose(Arquivo_Senhas);
 						
 						break;
 					case 3:
