@@ -225,9 +225,10 @@ int main(void){
 							system("Cls");
 							printf("\nAgor Você estará entrando na área de criação de conta\n");
 							printf("na hora de criar a conta você dará três informações:\n");
-							printf("\t\tQuem é o Dono da conta que está criando\n\t\tUm UserName que servirá exclusivamente para Log In\n\t\tA Senha que Utilizara para Logar sua Conta\n");
+							printf("\n\033[1;32mQuem é o Dono da conta que está criando\nUm UserName que servirá exclusivamente para Log In\nA Senha que Utilizara para Logar sua Conta\033[0m\n\n");
 							printf("É aconselhado usar dados faceis de se Lembrar\n");
-							
+							printf("Tanto na Senha como no User Name podem ser usados Caracteres especiais\n");
+							printf("Na hora de indicar quem será o Dono da Conta Não use Espaços\n\n");
 							
 							printf("\n\n\t======================================");
 							printf("\n\t|                                    |");
