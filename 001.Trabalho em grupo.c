@@ -9,6 +9,7 @@
 #include <unistd.h>
 
 #define MAX_Menu_Inicial 5
+#define MAX_Menu_Usuario 6
 
 //EQUIPE:
 //Allan
@@ -63,7 +64,7 @@ int main(void){
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
-	char MENU_USUARIO[10][1000] = {"Assistencia pro Usuário", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
+	char MENU_USUARIO[6][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
@@ -260,12 +261,26 @@ int main(void){
 						Arquivo_UserNames = fopen("Cofre_de_Users_O_Curso.txt", "r");
 						Arquivo_Senhas = fopen("Cofre_de_Senhas_O_Curso.txt", "r");
 						
-						printf("Digite o  seu UserName: ");
+						
+						printf("\n\n------------------------\n");
+						printf("\nDigite o  seu UserName: ");
 						scanf("%s", Tentativa_UserName);
+						printf("\n--------------------------\n\n");
 						
-						printf("Agora Digite a senha com UserName %s: ", Tentativa_UserName);
+						printf("\n\n----------------------------------");
+						Contador_ch_LogIn = strlen(Tentativa_UserName);
+						for(int i=0;i<Contador_ch_LogIn;i++){
+							printf("-");
+						}
+						printf("---\n");
+						printf("\nAgora Digite a senha com UserName %s: ", Tentativa_UserName);
 						scanf("%s", Tentativa_Senha);
-						
+						printf("\n----------------------------------");
+						Contador_ch_LogIn = strlen(Tentativa_UserName);
+						for(int i=0;i<Contador_ch_LogIn;i++){
+							printf("-");
+						}
+						printf("---\n\n");						
 						
 						for(int i=0;i<100;i++){
 							fscanf(Arquivo_UserNames, "%s", Retirada_UserNames[i]);
@@ -279,10 +294,30 @@ int main(void){
 						}
 						
 						if(Verificador_1V_2F){
-							//menu do Usuario maior 23 meun 15
-							system("Cls");
+							//menu do Usuario maior 23 meun 15 TOTAL 29
+							do{
 							printf("CONTA LOGADA COM SUCESSO");
-							printf("\n\nVocê se conectou a conta do(a) %s", Retirada_Donos[Contador_do_Dono]);
+							//colocar confirmação
+							printf("\n\n===========================================");
+							printf("\n|                                         |");
+							printf("\n|   \033[1;34mDe Enter para ir ao menu do Usuário\033[0m   |");
+							printf("\n|                                         |");
+							printf("\n===========================================");							
+							printf("\n\nVocê se conectou a conta do(a) %s\n\n", Retirada_Donos[Contador_do_Dono]);
+							
+							}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+							system("Cls");
+							escolha_do_Menu = 0;
+							printf("\t        \033[1;32m===========\033[1;35mMENU DO USUÁRIO\033[1;32m===========\033[0m\n");
+							for(int i=0;i<MAX_Menu_Usuario;i++){
+								if(escolha_do_Menu==i){
+									printf("\t\t| \033[4;31m-> %s\033[0m\n", MENU_USUARIO[i]);
+								}else{
+									printf("\t\t|    %s\n", MENU_USUARIO[i]);
+								}
+								
+							}	
+							
 						}else{
 							printf("\n\n\nInfelizmente a senha ou o UserName estão incorretos\n");
 							//colocar sistema de enter para menu principal
