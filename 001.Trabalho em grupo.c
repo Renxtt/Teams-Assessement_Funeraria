@@ -187,18 +187,24 @@ int main(void){
 				}
 				break;
 			case CHAVE_ENTER:
-				switch (Recepcao_Tecla) {
+				//TODO
+				switch (escolha_do_Menu) {
 					case 0:
 						//Configurações
+						
 						break;
 					case 1:
 						//Assitencia
 						break;
 					case 2:
 						//Sing Up
+						system("Cls");
+						
 						break;
 					case 3:
 						//Log In
+						system("Cls");
+					
 						break;
 					case 4:
 						//Sair
@@ -219,6 +225,38 @@ int main(void){
 						break;
 				}
 				break;
+			default:
+				system("Cls");
+				printf("\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+				for(int i=0;i<MAX_Menu_Inicial;i++){
+					if(escolha_do_Menu==i){
+						printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+						for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+							printf(" ");
+						}
+						printf("\033[1;32m|\033[0m\n");
+					}else{
+						printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+						for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+							printf(" ");
+						}
+						printf("\033[1;32m|\033[0m\n");
+					}
+				}
+				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+				if(escolha_do_Menu==0){
+					printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+				}else if(escolha_do_Menu==1){
+					printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+				}else if(escolha_do_Menu==2){
+					printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+				}else if(escolha_do_Menu==3){
+					printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+				}else if(escolha_do_Menu==4){
+					printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+				}	
+				printf("\t        Tecla Não Correspondente");
+				
 		}
 	}
 	
