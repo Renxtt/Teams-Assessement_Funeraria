@@ -334,9 +334,23 @@ int main(void){
 								}	
 							}
 							printf("\t        \033[1;32m===========================================\033[0m\n");
+							if(escolha_do_Menu==0){
+								printf("\n\n\t\033[1;34mTe dá acesso a assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
+							}else if(escolha_do_Menu==1){
+								printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
+							}else if(escolha_do_Menu==2){
+								printf("\n\n\t\033[1;34mServe para deletar a sua conta\033[0m\n\n");
+							}else if(escolha_do_Menu==3){
+								printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
+							}else if(escolha_do_Menu==4){
+								printf("\n\n\t\033[1;34mSai da sua conta e vai para área do MENU PRINCIPAL\033[0m");
+							}else if(escolha_do_Menu==5){
+								printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m")
+							}
 							while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
 								switch (Recepcao_Tecla) {
 									case SETA_CIMA:
+										system("Cls");
 										if(escolha_do_Menu>0){
 											escolha_do_Menu -= 1;
 										}
@@ -359,6 +373,7 @@ int main(void){
 										printf("\t        \033[1;32m===========================================\033[0m\n");							
 										break;
 									case SETA_BAIXO:
+										system("Cls");
 										if(escolha_do_Menu<5){
 											escolha_do_Menu +=1;
 										}
