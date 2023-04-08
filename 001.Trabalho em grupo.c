@@ -60,9 +60,8 @@ int main(void){
 	char Tentativa_Senha[1000], Retirada_Senhas[100][1000];
 	
 	//Variavel dos MENUS
-	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};
-	
-	
+	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
+	char MENU_USUARIO[][1000] = {"Assistencia Do Usuario", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
@@ -274,9 +273,10 @@ int main(void){
 						}
 						
 						if(Verificador_1V_2F){
-							printf("Olá");
+							//menu do Usuario
 						}else{
-							printf("Tchau");
+							printf("\n\n\nInfelizmente a senha ou o UserName estão incorretos\n");
+							//colocar sistema de enter para menu principal
 						}
 					
 						break;
