@@ -7,6 +7,9 @@
 #include <time.h>
 #include <conio.h>
 #include <unistd.h>
+
+#define MAX_Menu_Inicial 5
+
 //EQUIPE:
 //Allan
 //Eli
@@ -18,8 +21,8 @@
 
 enum{
 		
-	TECLA_ESC = 27,
-	TECLA_ENTER = 13,
+	CHAVE_ESC = 27,
+	CHAVE_ENTER = 13,
 	SETA_CIMA = 256 +72,
 	SETA_BAIXO = 256 + 80,
 	SETA_ESQUERDA = 256 + 75,
@@ -48,8 +51,12 @@ int main(void){
 	char nome[40],email[40],relacao[20],cpf[20];
 	int ano,idade,confirma;
 	//Variavel dos MENUS
+	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};
 	
 	
+	//Crinado variaveis Aussiliares do menu
+	int Contador_de_Casas_inicial[10];
+	int escolha_do_Menu;
 //INÍCIO CÓDIGO
 
 	//INFO FUNERÁRIA
@@ -64,10 +71,50 @@ int main(void){
 	printf("|                                            |\n");
 	printf("==============================================\n\n");
 	getch();
+	system("Cls");
 	//CADASTRO
 	
+		//Definindo Menu principal
+	for(int i=0;i<MAX_Menu_Inicial;i++){
+		Contador_de_Casas_inicial[i] = strlen(MENU_PRINCIPAL[i]);
+		Contador_de_Casas_inicial[i] = Contador_de_Casas_inicial[i] + 3;
+		Contador_de_Casas_inicial[i] = 21 - Contador_de_Casas_inicial[i];
+		Contador_de_Casas_inicial[i] = Contador_de_Casas_inicial[i] - 1;
+	}
 	
-		
+	// criação deo Menu
+	printf("\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+	for(int i=0;i<MAX_Menu_Inicial;i++){
+		if(escolha_do_Menu==i){
+			printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+			for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+				printf(" ");
+			}
+			printf("\033[1;32m|\033[0m\n");
+		}else{
+			printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+			for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+				printf(" ");
+			}
+			printf("\033[1;32m|\033[0m\n");
+		}
+	}
+	printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+	
+	int Recepcao_Tecla;
+	while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
+		switch (Recepcao_Tecla) {
+			case SETA_CIMA:
+				
+				break;
+			case SETA_BAIXO:
+				
+				break;
+			case CHAVE_ENTER:
+				
+				break;
+		}
+	}
 	
 	//CADASTRO PESSOA FÍSICA
 	printf("\nCADASTRO DO ORGANIZADOR\n\n");
