@@ -56,6 +56,8 @@ int main(void){
 	//Variaveis para cadastro de conta
 	char Cadastro_Dono[1000], Cadastro_UserName[1000];
 	char Cadastro_Senha[1000];
+	char Tentativa_UserName[1000];
+	char Tentativa_Senha[1000];
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};
@@ -64,7 +66,7 @@ int main(void){
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
-	int Contador_ch_SingUp;
+	int Contador_ch_SingUp, Contador_ch_LogIn;
 	
 	//criando variavel para  receber arquivos
 	FILE *Arquivo_Senhas; // caso for usar o nome do arquivo é "Cofre_de_Senhas_O_Curso.txt"
@@ -251,6 +253,13 @@ int main(void){
 					case 3:
 						//Log In
 						system("Cls");
+						
+						Arquivo_Donos = fopen("Cofre_de_Donos_O_Curso.txt", "r");
+						Arquivo_UserNames = fopen("Cofre_de_Users_O_Curso.txt", "r");
+						Arquivo_Senhas = fopen("Cofre_de_Senhas_O_Curso.txt", "r");
+						
+						printf("Digite o  seu UserName: ");
+						
 					
 						break;
 					case 4:
