@@ -205,6 +205,12 @@ int main(void){
 						//Sing Up
 						system("Cls");
 						
+						Arquivo_Donos = fopen("Cofre_de_Donos_O_Curso.txt", "a");
+						Arquivo_UserNames = fopen("Cofre_de_Users_O_Curso.txt", "a");
+						Arquivo_Senhas = fopen("Cofre_de_Senhas_O_Curso.txt", "a");
+						
+						
+						
 						break;
 					case 3:
 						//Log In
