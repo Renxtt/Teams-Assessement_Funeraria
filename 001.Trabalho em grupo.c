@@ -237,6 +237,23 @@ int main(void){
 							printf("\n\t======================================\n\n\n");
 							getch();
 						}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+	
+						system("Cls");
+						printf("Agora que você concorda com os nossos ideais\n");
+						Sleep(2000);
+						printf("Vamos criar a sua conta");
+						Sleep(2000);
+						system("Cls");
+						
+						printf("\n\n\t\t\033[2;37mConectando a Criação de conta\033[0m");
+						for(int i=0;i<3;i++){
+							Sleep(500);
+							printf("\033[1;34m.\033[0m");
+						}
+						Sleep(rand() % 3000+1);
+						system("Cls");
+						printf("\n\n\t\tConectado a Criação de conta\n\n");
+						Sleep(2000);
 						
 						system("Cls");
 						Arquivo_Donos = fopen("Cofre_de_Donos_O_Curso.txt", "a");
