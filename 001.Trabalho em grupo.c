@@ -26,16 +26,6 @@ enum{
 	SETA_DIREITA = 256 + 77
 	
 };
-
-static GET_CODE(void){
-	
-	int GET_CH = getch();
-	if(GET_CH ==0 || GET_CH ==224){
-		GET_CH = 256 +getch();
-	}
-	return GET_CH;
-}
-
 int main(void){
 	setlocale(LC_ALL, "portuguese");
 	unsigned int cp = 1252;
@@ -49,7 +39,7 @@ int main(void){
 	char nome[40],email[40],relacao[20],cpf[20];
 	int ano,idade,confirma;
 	//Variavel dos MENUS
-	char 
+	
 	
 //INÍCIO CÓDIGO
 
