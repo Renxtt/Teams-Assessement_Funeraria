@@ -60,6 +60,12 @@ int main(void){
 	//Crinado variaveis Aussiliares do menu
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
+	
+	//criando variavel para  receber arquivos
+	FILE *Arquivo_Senhas; // caso for usar o nome do arquivo é "Cofre_de_Senhas_O_Curso.txt"
+	FILE *Arquivo_UserNames; //  caso for usar o nome do arquivo é "Cofre_de_Users_O_Curso.txt"
+	FILE *Arquivo_Donos; //  caso for usar o nome do arquivo é  "Cofre_de_Donos_O_Curso.txt"
+	
 //INÍCIO CÓDIGO
 
 	//INFO FUNERÁRIA
@@ -187,7 +193,6 @@ int main(void){
 				}
 				break;
 			case CHAVE_ENTER:
-				//TODO
 				switch (escolha_do_Menu) {
 					case 0:
 						//Configurações
