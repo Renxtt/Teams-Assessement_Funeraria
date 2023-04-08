@@ -56,7 +56,7 @@ int main(void){
 	
 	//Crinado variaveis Aussiliares do menu
 	int Contador_de_Casas_inicial[10];
-	int escolha_do_Menu;
+	int escolha_do_Menu = 0;
 //INÍCIO CÓDIGO
 
 	//INFO FUNERÁRIA
@@ -105,10 +105,50 @@ int main(void){
 	while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
 		switch (Recepcao_Tecla) {
 			case SETA_CIMA:
-				
+				system("Cls");
+				if(escolha_do_Menu>0){
+					escolha_do_Menu -= 1;	
+				}
+				printf("\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+				for(int i=0;i<MAX_Menu_Inicial;i++){
+					if(escolha_do_Menu==i){
+						printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+						for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+							printf(" ");
+						}
+						printf("\033[1;32m|\033[0m\n");
+					}else{
+						printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+						for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+							printf(" ");
+						}
+						printf("\033[1;32m|\033[0m\n");
+					}
+				}
+				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
 				break;
 			case SETA_BAIXO:
-				
+				system("Cls");
+				if(escolha_do_Menu<4){
+					escolha_do_Menu += 1;
+				}
+				printf("\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+				for(int i=0;i<MAX_Menu_Inicial;i++){
+					if(escolha_do_Menu==i){
+						printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+						for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+							printf(" ");
+						}
+						printf("\033[1;32m|\033[0m\n");
+					}else{
+						printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+						for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+							printf(" ");
+						}
+						printf("\033[1;32m|\033[0m\n");
+					}
+				}
+				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
 				break;
 			case CHAVE_ENTER:
 				
