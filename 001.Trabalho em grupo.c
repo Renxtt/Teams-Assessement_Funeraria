@@ -100,6 +100,17 @@ int main(void){
 		}
 	}
 	printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+	if(escolha_do_Menu==0){
+		printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+	}else if(escolha_do_Menu==1){
+		printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+	}else if(escolha_do_Menu==2){
+		printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+	}else if(escolha_do_Menu==3){
+		printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+	}else if(escolha_do_Menu==4){
+		printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+	}
 	
 	int Recepcao_Tecla;
 	while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
@@ -126,6 +137,17 @@ int main(void){
 					}
 				}
 				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+				if(escolha_do_Menu==0){
+					printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+				}else if(escolha_do_Menu==1){
+					printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+				}else if(escolha_do_Menu==2){
+					printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+				}else if(escolha_do_Menu==3){
+					printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+				}else if(escolha_do_Menu==4){
+					printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+				}
 				break;
 			case SETA_BAIXO:
 				system("Cls");
@@ -149,6 +171,17 @@ int main(void){
 					}
 				}
 				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+				if(escolha_do_Menu==0){
+					printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+				}else if(escolha_do_Menu==1){
+					printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+				}else if(escolha_do_Menu==2){
+					printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+				}else if(escolha_do_Menu==3){
+					printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+				}else if(escolha_do_Menu==4){
+					printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+				}
 				break;
 			case CHAVE_ENTER:
 				
