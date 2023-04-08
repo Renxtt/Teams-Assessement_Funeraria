@@ -61,7 +61,7 @@ int main(void){
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
-	char MENU_USUARIO[][1000] = {"Assistencia Do Usuario", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
+	char MENU_USUARIO[10][1000] = {"Assistencia Do Usuario", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
