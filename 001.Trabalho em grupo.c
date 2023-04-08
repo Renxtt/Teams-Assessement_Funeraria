@@ -334,6 +334,9 @@ int main(void){
 								}	
 							}
 							printf("\t        \033[1;32m===========================================\033[0m\n");
+							while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
+								//TODO
+							}
 							
 						}else{
 							printf("\n\n\nInfelizmente a senha ou o UserName estão incorretos\n");
