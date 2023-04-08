@@ -58,15 +58,18 @@ int main(void){
 	char Cadastro_Senha[1000];
 	char Tentativa_UserName[1000], Retirada_UserNames[100][1000];
 	char Tentativa_Senha[1000], Retirada_Senhas[100][1000];
+	char Retirada_Donos[100][1000], Apresentacao_Dono[1000];
+	
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
-	char MENU_USUARIO[10][1000] = {"Assistencia Do Usuario", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
+	char MENU_USUARIO[10][1000] = {"Assistencia pro Usuário", "Configurações", "Deletar Conta", "Serviços", "Log Out", "Sair"};
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10];
 	int escolha_do_Menu = 0;
 	int Contador_ch_SingUp, Contador_ch_LogIn;
 	int Verificador_1V_2F=0;
+	int Contador_do_Dono;
 	//criando variavel para  receber arquivos
 	FILE *Arquivo_Senhas; // caso for usar o nome do arquivo é "Cofre_de_Senhas_O_Curso.txt"
 	FILE *Arquivo_UserNames; //  caso for usar o nome do arquivo é "Cofre_de_Users_O_Curso.txt"
@@ -267,13 +270,17 @@ int main(void){
 						for(int i=0;i<100;i++){
 							fscanf(Arquivo_UserNames, "%s", Retirada_UserNames[i]);
 							fscanf(Arquivo_Senhas, "%s", Retirada_Senhas[i]);
+							fscanf(Arquivo_Donos, "%s", Retirada_Donos[i]);
 							if(strcmp(Retirada_UserNames[i], Tentativa_UserName)==0 && strcmp(Retirada_Senhas[i], Tentativa_Senha)==0){
 								Verificador_1V_2F = 1;
+								
 							}
 						}
 						
 						if(Verificador_1V_2F){
-							//menu do Usuario
+							//menu do Usuario maior 23 meun 15
+							SYSTEM("Cls");
+							printf("CONTA LOGADA COM SUCESSO");
 						}else{
 							printf("\n\n\nInfelizmente a senha ou o UserName estão incorretos\n");
 							//colocar sistema de enter para menu principal
