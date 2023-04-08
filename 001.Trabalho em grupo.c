@@ -39,6 +39,9 @@ static Get_Code(void){
 }
 
 int main(void){
+	
+	time_t tempo;
+	srand((unsigned) time(&tempo));
 	setlocale(LC_ALL, "portuguese");
 	unsigned int cp = 1252;
 	unsigned int cpin = GetConsoleCP();
@@ -184,7 +187,37 @@ int main(void){
 				}
 				break;
 			case CHAVE_ENTER:
-				
+				switch (Recepcao_Tecla) {
+					case 0:
+						//Configurações
+						break;
+					case 1:
+						//Assitencia
+						break;
+					case 2:
+						//Sing Up
+						break;
+					case 3:
+						//Log In
+						break;
+					case 4:
+						//Sair
+						system("Cls");
+						printf("\n\n\t\tSaindo");
+						for(int i=0;i<=3;i++){
+							Sleep(500);
+							printf(".");
+						}
+						system("Cls");
+						Sleep(500);
+						printf("\n\n\t\t\033[2;37mSeção sendo Finalizada\033[0m\n\n");
+						Sleep(rand() % 5000);
+						system("Cls");
+						printf("\n\n\t\tSeção Finalizada\n\n");
+						exit(0);
+						return 0;
+						break;
+				}
 				break;
 		}
 	}
