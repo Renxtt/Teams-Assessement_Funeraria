@@ -42,11 +42,291 @@ static int Get_Code(void){
 	return Code;
 }
 
-void Codigo_Chave(void){
-	char parte_codigo[5];
+void Codigo_Chave(int qtd_chave){
+	char parte_codigo[6][qtd_chave+2], Codigo_Chave_completo[1000];
+	int randomico_do_codigo[5];
+	int rand_auxiliar;
+	srand(time(NULL));
 	
+	for(int i=0;i<qtd_chave;i++){
+		randomico_do_codigo[i] = rand() % 26+1;
+		//a ou 0 ou A
+		if(randomico_do_codigo[i]==1){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "A");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "0");
+			}else if(parte_codigo==3){
+				strcpy(parte_codigo[i], "a");
+			}
+		}
+		//b ou 1 ou B
+		if(randomico_do_codigo[i]==2){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "B");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "1");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "b");
+			}
+		}
+		//c ou 2 ou C
+		if(randomico_do_codigo[i]==3){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "C");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "2");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "c");
+			}
+		}		
+		//d ou 3 ou D
+		if(randomico_do_codigo[i]==4){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "D");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "3");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "d");
+			}
+		}		
+		//e ou 4 ou E
+		if(randomico_do_codigo[i]==5){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "E");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "4");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "e");
+			}
+		}		
+		//f ou 5 ou F
+		if(randomico_do_codigo[i]==6){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "F");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "5");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "f");
+			}
+		}		
+		//g ou 6 ou G
+		if(randomico_do_codigo[i]==7){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "G");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "6");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "g");
+			}
+		}
+		//h ou 7 ou H
+		if(randomico_do_codigo[i]==8){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "H");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "7");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "h");
+			}
+		}
+		//i ou 8 ou I
+		if(randomico_do_codigo[i]==9){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "I");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "8");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "i");
+			}
+		}
+		//j ou 9 ou J
+		if(randomico_do_codigo[i]==10){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "J");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "9");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "j");
+			}
+		}
+		//k ou ! ou K
+		if(randomico_do_codigo[i]==11){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "K");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "!");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "k");
+			}
+		}
+		//l ou @ ou L
+		if(randomico_do_codigo[i]==12){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "L");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "@");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "l");
+			}
+		}
+		//m ou # ou M
+		if(randomico_do_codigo[i]==13){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "M");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "#");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "m");
+			}
+		}
+		//n ou $ ou N
+		if(randomico_do_codigo[i]==14){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "N");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "$");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "n");
+			}
+		}
+		//o ou % ou O
+		if(randomico_do_codigo[i]==15){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "O");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "%");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "o");
+			}
+		}
+		//p ou & ou P
+		if(randomico_do_codigo[i]==16){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "P");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "&");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "p");
+			}
+		}
+		//q ou * ou Q
+		if(randomico_do_codigo[i]==17){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "Q");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "*");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "p");
+			}
+		}
+		//r ou ? ou R
+		if(randomico_do_codigo[i]==18){
+			rand_auxiliar = rand() % 3+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "R");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "?");
+			}else if(rand_auxiliar==3){
+				strcpy(parte_codigo[i], "r");
+			}
+		}
+		//s ou S
+		if(randomico_do_codigo[i]==19){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "S");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "s");
+			}
+		}
+		//t ou T
+		if(randomico_do_codigo[i]==20){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "T");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "t");
+			}
+		}		
+		//u ou U
+		if(randomico_do_codigo[i]==21){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "U");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "u");
+			}
+		}
+		//v ou V
+		if(randomico_do_codigo[i]==22){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "V");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "v");
+			}
+		}
+		//w ou W
+		if(randomico_do_codigo[i]==23){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "W");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "w");
+			}
+		}
+		//x ou X
+		if(randomico_do_codigo[i]==24){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "X");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "x");
+			}
+		}
+		//y ou Y
+		if(randomico_do_codigo[i]==25){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "Y");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "y");
+			}
+		}
+		//z ou Z
+		if(randomico_do_codigo[i]==26){
+			rand_auxiliar = rand() % 2+1;
+			if(rand_auxiliar==1){
+				strcpy(parte_codigo[i], "Z");
+			}else if(rand_auxiliar==2){
+				strcpy(parte_codigo[i], "z");
+			}
+		}
+	}
+	for(int i=1;i<qtd_chave;i++){
+		strcat(parte_codigo[0], parte_codigo[i]);
+	}
 	
-	
+	strcpy(Codigo_Chave_completo, parte_codigo[0]);
+	//printf("%s", Codigo_Chave_completo);
 }
 
 int main(void){
@@ -100,12 +380,13 @@ int main(void){
 		//horaria de trabalho
 	do{
 		system("Cls");
-	printf("           funeraria santa maria\n          sua morte nossa alegria\n              desde 1986 a.C\n\n          horario de funcionamento:\n               00:00 a 23:59\n\n                 telefone:\n              -12 93774-84639\n\n     rua marcindo de sima na rua de baixo");
-	printf("\n\n\n==============================================\n");
-	printf("|                                            |\n");
-	printf("|   \033[1;34mDe Enter para ir para O Menu_do_Inicio\033[0m   |\n");
-	printf("|                                            |\n");
-	printf("==============================================\n\n");
+		
+		printf("           funeraria santa maria\n          sua morte nossa alegria\n              desde 1986 a.C\n\n          horario de funcionamento:\n               00:00 a 23:59\n\n                 telefone:\n              -12 93774-84639\n\n     rua marcindo de sima na rua de baixo");
+		printf("\n\n\n==============================================\n");
+		printf("|                                            |\n");
+		printf("|   \033[1;34mDe Enter para ir para O Menu_do_Inicio\033[0m   |\n");
+		printf("|                                            |\n");
+			printf("==============================================\n\n");
 	}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 	system("Cls");
 	
@@ -670,6 +951,7 @@ int main(void){
 																case 0:
 																	//Procurar Confirmação de Pedido
 																	
+																		//imprimir nota fiscal
 																	
 																	break;
 																case 1:
@@ -679,8 +961,178 @@ int main(void){
 																	break;
 																case 2:
 																	//Serviços Post Mortem
+																	//adicionar arquivo fopen "a" append
+																	system("Cls");
+																	for(int i=0;i<5;i++){
+																		//TODO
+																		system("Cls");
+																		printf("\n\n\t\t\033[2;37mConectando ao Cadastro do Post Mortem");
+																		for(int j=0;j<4;j++){
+																			Sleep(500);
+																			printf(".");
+																		}
+																	}
+																	Sleep(rand() % 3000+1);
+																	system("Cls");
+																	printf("\n\n\t\t\033[0mConectado ao Cadastro do Post Mortem\n");
+																	printf("\n\n\t\tDe enter\n\n");
+																	system("PAUSE");
+																	system("Cls");
+																	//CADASTRO PESSOA FÍSICA
+																	Sleep(rand() % 3000+1);
+																	system("Cls");
+																	printf("\nCADASTRO DO ORGANIZADOR\n\n");
+																	printf("Nome: ");//nome pessoa
+																	scanf("%s", nome);
+																	//fgets(nome , 40, stdin);
+																	printf("CPF: ");//cpf pessoa
+																	scanf("%s", cpf);
+																	//fgets(cpf,20,stdin);
+																	printf("Ano de nascimento: ");//data nascimento pessoa (se de menor cancelar cadastro)
+																	scanf("%d",&ano);
+																	idade=2023-ano;
+																		if(idade<18){
+																			//adicionar fclose
+																			do{
+																				printf("Menor de idade. Cadastro Indisponível.\n");
+																			// fazer um Getch e adicionar menu
+																				printf("\n\n===========================================");
+																				printf("\n|                                         |");
+																				printf("\n|   \033[1;34mDe Enter para ir ao menu do Usuário\033[0m   |");
+																				printf("\n|                                         |");
+																				printf("\n===========================================");
+																			}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+																			//Adicionar Menu aqui
+																			system("Cls");
+																			printf("\t        \033[1;32m============\033[1;35mMENU DOS SERVIÇOS\033[1;32m============\033[0m\n");
+																			for(int i=0;i<MAX_Menu_Servicos;i++){
+																				if(escolha_do_Menu==i){
+																					printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_SERVIÇOS[i]);
+																					for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																						printf(" ");
+																					}
+																					printf("\033[1;32m|\033[0m\n");
+																				}else{
+																					printf("\t\t\033[1;32m|\033[0m      %s", MENU_SERVIÇOS[i]);
+																					for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																						printf(" ");
+																					}
+																					printf("\033[1;32m|\033[0m\n");	
+																				}
+																			}
+																			printf("\t        \033[1;32m=========================================\033[0m\n");
+																			
+																			if(escolha_do_Menu==0){
+																				printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
+																			}else if(escolha_do_Menu==1){
+																				printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+																			}else if(escolha_do_Menu==2){
+																				printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
+																			}																																					
+																		}
+																		else{
+																			printf("Relação com o falecido: ");//relação com morto
+																			fgets(relacao,20,stdin);
+																			scanf("%s",&relacao);
+																			printf("Email para contato: ");//email pessoa
+																			fgets(email,40,stdin);
+																			scanf("%s",&email);
+																		
+																		//print informação
+																			printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
+																			printf("Nome Do Organizador: %s",nome);//nome
+																			printf("\nIdade: %d anos\n",idade);//idade
+																			printf("CPF: %s",cpf);//cpf
+																			printf("\nRelação com o falecido: %s",relacao);//relação com o falecido
+																			printf("\nEmail para contato: %s",email);//email
 																	
+																		//confirmar cadastro
+																			printf("\n\nConfirmar Cadastro?\nSim-1\tNão-2\n");
+																			scanf("%d",&confirma);
+																		
+																			if(confirma==2){
+																				//adicionar fclose
+																				do{
+																					system("Cls");
+																					printf("\nPor favor, refaça seu cadastro.\n\n");
+																					printf("\n\n===========================================");
+																					printf("\n|                                         |");
+																					printf("\n|   \033[1;34mDe Enter para ir ao menu do Usuário\033[0m   |");
+																					printf("\n|                                         |");
+																					printf("\n===========================================");
+																				}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+																				//Adicionar Menu aqui
+																				system("Cls");
+																				printf("\t        \033[1;32m============\033[1;35mMENU DOS SERVIÇOS\033[1;32m============\033[0m\n");
+																				for(int i=0;i<MAX_Menu_Servicos;i++){
+																					if(escolha_do_Menu==i){
+																						printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_SERVIÇOS[i]);
+																						for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																							printf(" ");
+																						}
+																						printf("\033[1;32m|\033[0m\n");
+																					}else{
+																						printf("\t\t\033[1;32m|\033[0m      %s", MENU_SERVIÇOS[i]);
+																						for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																							printf(" ");
+																						}
+																						printf("\033[1;32m|\033[0m\n");	
+																					}
+																				}
+																				printf("\t        \033[1;32m=========================================\033[0m\n");
+																				
+																				if(escolha_do_Menu==0){
+																					printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
+																				}else if(escolha_do_Menu==1){
+																					printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+																				}else if(escolha_do_Menu==2){
+																					printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
+																				}
+																			}
+																			else{
+																				
+																				//adicionar fprintf 
+																				//CADASTRO MORTO
+																					//cpf do morto (para checar se ele realmente esta morto)
+																					//nome do morto
+																					//altura morto
+																					//largura morto
+																					//peso morto
+																				
+																				//SELEÇÃO CERIMONIA
+																					//local
+																					//data(dia)
+																					//numero convidados - informar preço por convidado
+																				
+																				//decoração - opcional
+																					//flores e velas
+																					//retrato do morto
+																					
+																				//serviços
+																					//padre
+																					//cortejo
+																				
+																				
+																				//enterro
+																					//modelos pré prontos de caixão com P M G e personalizado
+																					//local do enterro
+																				//cremação
+																					//informar estilos pré-prontos de potes para as cinzas
+																					
+																				//transporte
+																					//mortuário->local
+																					//local->enterro/cremação
+																							
+																				
+																				//calcular o valor total da cerimonia (Usando Juros e extras)																	
+																			}	
+																		}
+																		
+																
+																		
+																
 																	
+	
 																	break;
 															}
 															break;
@@ -884,87 +1336,9 @@ int main(void){
 		}
 	}
 	
-	//CADASTRO PESSOA FÍSICA
-	printf("\nCADASTRO DO ORGANIZADOR\n\n");
-	printf("Nome: ");//nome pessoa
-	fgets(nome,40,stdin);
-	printf("CPF: ");//cpf pessoa
-	fgets(cpf,20,stdin);
-	printf("Ano de nascimento: ");//data nascimento pessoa (se de menor cancelar cadastro)
-	scanf("%d",&ano);
-	idade=2023-ano;
-		if(idade<18){
-			printf("Menor de idade. Cadastro Indisponível.\n");
-			// fazer um Getch e adicionar menu
-		}
-		else{
-			printf("Relação com o falecido: ");//relação com morto
-			fgets(relacao,20,stdin);
-			scanf("%s",&relacao);
-			printf("Email para contato: ");//email pessoa
-			fgets(email,40,stdin);
-			scanf("%s",&email);
-		
-		//print informação
-			printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
-			printf("%s",nome);//nome
-			printf("%s",cpf);//cpf
-			printf("%d anos",idade);//idade
-			printf("\nRelação com o falecido: %s",relacao);//relação com o falecido
-			printf("\nEmail para contato: %s",email);//email
-	
-		//confirmar cadastro
-			printf("\n\nConfirmar Cadastro?\nSim-1\tNão-2\n");
-			scanf("%d",&confirma);
-		
-			if(confirma==2){
-				printf("\nPor favor, refaça seu cadastro.");
-				//Adicionar Menu aqui
-			}
-			else{
-				//Falta Coisa Paola
-			}	
-		}
-		
-
-		
 
 	
-	//CADASTRO MORTO
-		//cpf do morto (para checar se ele realmente esta morto)
-		//nome do morto
-		//altura morto
-		//largura morto
-		//peso morto
 	
-	//SELEÇÃO CERIMONIA
-		//local
-		//data(dia)
-		//numero convidados - informar preço por convidado
-	
-	//decoração - opcional
-		//flores e velas
-		//retrato do morto
-		
-	//serviços
-		//padre
-		//cortejo
-	
-	
-	//enterro
-		//modelos pré prontos de caixão com P M G e personalizado
-		//local do enterro
-	//cremação
-		//informar estilos pré-prontos de potes para as cinzas
-		
-	//transporte
-		//mortuário->local
-		//local->enterro/cremação
-				
-	
-	//calcular o valor total da cerimonia (Usando Juros e extras)
-	
-	//imprimir nota fiscal
 		
 	return 0;
 }
