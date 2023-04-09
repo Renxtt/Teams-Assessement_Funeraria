@@ -841,6 +841,7 @@ int main(void){
 						printf("\033[1;32m|\033[0m\n");
 					}
 				}
+				
 				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
 				if(escolha_do_Menu==0){
 					printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
