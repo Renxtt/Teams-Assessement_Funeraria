@@ -23,7 +23,8 @@
 //Objetivo: Construir uma simulação de um site de uma funeraria (o mais complleta possivel)
 
 enum{
-		
+	
+	Chave_TAB = 9,	
 	CHAVE_ESC = 27,
 	CHAVE_ENTER = 13,
 	SETA_CIMA = 256 +72,
@@ -39,6 +40,13 @@ static int Get_Code(void){
 		Code = 256 +getch();
 	}
 	return Code;
+}
+
+void Codigo_Chave(void){
+	char parte_codigo[5];
+	
+	
+	
 }
 
 int main(void){
@@ -657,7 +665,24 @@ int main(void){
 																											
 															break;
 														case CHAVE_ENTER:
-															//TODO
+															//"Procurar Confirmação de Pedido", "Criar confirmação de Pedidos", "Serviços Post Mortem"}
+															switch (escolha_do_Menu) {
+																case 0:
+																	//Procurar Confirmação de Pedido
+																	
+																	
+																	break;
+																case 1:
+																	//Criar confirmação de Pedidos
+																	
+																	
+																	break;
+																case 2:
+																	//Serviços Post Mortem
+																	
+																	
+																	break;
+															}
 															break;
 														default:
 															system("Cls");
