@@ -925,6 +925,7 @@ int main(void){
 		//padre
 		//cortejo
 	
+	
 	//enterro
 		//modelos pré prontos de caixão com P M G e personalizado
 		//local do enterro
