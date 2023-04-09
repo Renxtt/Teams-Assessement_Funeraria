@@ -11,7 +11,7 @@
 #define MAX_Menu_Inicial 5
 #define MAX_Menu_Usuario 4
 #define TEMPO_print_coriqueiro 700
-#define MAX_Menu_Servicos 2
+#define MAX_Menu_Servicos 3
 
 //EQUIPE:
 //Allan
@@ -68,11 +68,11 @@ int main(void){
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
-	char MENU_USUARIO[6][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Serviços", "Sair/Log Out"};
-	char MENU_SERVIÇOS[2][1000] = {"Serviços Post Mortem", "Outros"};
-	char MENU_OUTROS_SERVICOS[2][1000] = {"Procurar Confirmação de Pedido", "Criar confirmação de Pedidos"};
+	char MENU_USUARIO[4][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Serviços", "Sair/Log Out"};
+	char MENU_SERVIÇOS[3][1000] = {"Procurar Confirmação de Pedido", "Criar confirmação de Pedidos", "Serviços Post Mortem"};
+	
 	//Crinado variaveis auxiliares
-	int Contador_de_Casas_inicial[10], Contador_de_Casas_Usuario[10];
+	int Contador_de_Casas_inicial[10], Contador_de_Casas_Usuario[10], Contador_de_Casas_Other_servico[10];
 	int escolha_do_Menu = 0;
 	int Contador_ch_SingUp, Contador_ch_LogIn;
 	int Verificador_1V_2F=0;
@@ -555,6 +555,143 @@ int main(void){
 												break;
 											case 2:
 												//Serviços
+												system("Cls");
+												
+												for(int i=0;i<MAX_Menu_Servicos;i++){
+													Contador_de_Casas_Other_servico[i] = strlen(MENU_SERVIÇOS[i]);
+													Contador_de_Casas_Other_servico[i] = Contador_de_Casas_Other_servico[i] + 3;
+													Contador_de_Casas_Other_servico[i] = 39 - Contador_de_Casas_Other_servico[i];
+													Contador_de_Casas_Other_servico[i] = Contador_de_Casas_Other_servico[i] -3;													
+												}
+												escolha_do_Menu = 0;
+												printf("\t        \033[1;32m============\033[1;35mMENU DOS SERVIÇOS\033[1;32m============\033[0m\n");
+												for(int i=0;i<MAX_Menu_Servicos;i++){
+													if(escolha_do_Menu==i){
+														printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_SERVIÇOS[i]);
+														for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+															printf(" ");
+														}
+														printf("\033[1;32m|\033[0m\n");
+													}else{
+														printf("\t\t\033[1;32m|\033[0m      %s", MENU_SERVIÇOS[i]);
+														for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+															printf(" ");
+														}
+														printf("\033[1;32m|\033[0m\n");	
+													}
+												}
+												printf("\t        \033[1;32m=========================================\033[0m\n");
+												
+												if(escolha_do_Menu==0){
+													printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
+												}else if(escolha_do_Menu==1){
+													printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+												}else if(escolha_do_Menu==2){
+													printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
+												}
+												
+												while((Recepcao_Tecla = Get_Code()) != CHAVE_ESC){
+													switch (Recepcao_Tecla) {
+														case SETA_CIMA:
+															system("Cls");
+															if(escolha_do_Menu>0){
+																escolha_do_Menu -= 1;
+															}
+															printf("\t        \033[1;32m============\033[1;35mMENU DOS SERVIÇOS\033[1;32m============\033[0m\n");
+															for(int i=0;i<MAX_Menu_Servicos;i++){
+																if(escolha_do_Menu==i){
+																	printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_SERVIÇOS[i]);
+																	for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																		printf(" ");
+																	}
+																	printf("\033[1;32m|\033[0m\n");
+																}else{
+																	printf("\t\t\033[1;32m|\033[0m      %s", MENU_SERVIÇOS[i]);
+																	for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																		printf(" ");
+																	}
+																	printf("\033[1;32m|\033[0m\n");	
+																}
+															}
+															printf("\t        \033[1;32m=========================================\033[0m\n");
+															
+															if(escolha_do_Menu==0){
+																printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
+															}else if(escolha_do_Menu==1){
+																printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+															}else if(escolha_do_Menu==2){
+																printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
+															}
+																											
+															break;
+														case SETA_BAIXO:
+															system("Cls");
+															if(escolha_do_Menu<2){
+																escolha_do_Menu += 1;
+															}
+															printf("\t        \033[1;32m============\033[1;35mMENU DOS SERVIÇOS\033[1;32m============\033[0m\n");
+															for(int i=0;i<MAX_Menu_Servicos;i++){
+																if(escolha_do_Menu==i){
+																	printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_SERVIÇOS[i]);
+																	for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																		printf(" ");
+																	}
+																	printf("\033[1;32m|\033[0m\n");
+																}else{
+																	printf("\t\t\033[1;32m|\033[0m      %s", MENU_SERVIÇOS[i]);
+																	for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																		printf(" ");
+																	}
+																	printf("\033[1;32m|\033[0m\n");	
+																}
+															}
+															printf("\t        \033[1;32m=========================================\033[0m\n");
+															
+															if(escolha_do_Menu==0){
+																printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
+															}else if(escolha_do_Menu==1){
+																printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+															}else if(escolha_do_Menu==2){
+																printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
+															}
+																											
+															break;
+														case CHAVE_ENTER:
+															//TODO
+															break;
+														default:
+															system("Cls");
+															printf("\t        \033[1;32m============\033[1;35mMENU DOS SERVIÇOS\033[1;32m============\033[0m\n");
+															for(int i=0;i<MAX_Menu_Servicos;i++){
+																if(escolha_do_Menu==i){
+																	printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_SERVIÇOS[i]);
+																	for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																		printf(" ");
+																	}
+																	printf("\033[1;32m|\033[0m\n");
+																}else{
+																	printf("\t\t\033[1;32m|\033[0m      %s", MENU_SERVIÇOS[i]);
+																	for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																		printf(" ");
+																	}
+																	printf("\033[1;32m|\033[0m\n");	
+																}
+															}
+															printf("\t        \033[1;32m=========================================\033[0m\n");
+															
+															if(escolha_do_Menu==0){
+																printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
+															}else if(escolha_do_Menu==1){
+																printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+															}else if(escolha_do_Menu==2){
+																printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
+															}
+															
+															printf("\n\n\tTecla Não reconhecida\n");
+															break;
+													}
+												}
+												
 												break;
 											case 3:
 												//Sair
@@ -590,7 +727,6 @@ int main(void){
 										}
 										break;
 									default:
-										//TODO
 										printf("\t        \033[1;32m==============\033[1;35mMENU DO USUÁRIO\033[1;32m==============\033[0m\n");
 										for(int i=0;i<MAX_Menu_Usuario;i++){
 											if(escolha_do_Menu==i){
