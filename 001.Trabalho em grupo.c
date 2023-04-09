@@ -419,15 +419,15 @@ int main(void){
 	}
 	printf("\t        \033[1;32m=======================\033[0m\n\n\n");
 	if(escolha_do_Menu==0){
-		printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+		printf("\n\n\t\033[1;34mFornece acesso às configurações personalizadas do programa\033[0m\n\n");
 	}else if(escolha_do_Menu==1){
-		printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+		printf("\n\n\t\033[1;34mFornece Ajuda para entender melhor como esse programa funciona\033[0m\n\n");
 	}else if(escolha_do_Menu==2){
-		printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+		printf("\n\n\t\033[1;34mFornece acesso à Criação de Conta\033[0m\n\n");
 	}else if(escolha_do_Menu==3){
-		printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+		printf("\n\n\t\033[1;34mFornece acesso para conectar com uma conta já existente\033[0m\n\n");
 	}else if(escolha_do_Menu==4){
-		printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+		printf("\n\n\t\033[1;34mFornece acesso para Sair do programa\033[0m\n\n");
 	}
 	
 	
@@ -456,15 +456,15 @@ int main(void){
 				}
 				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
 				if(escolha_do_Menu==0){
-					printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso às configurações personalizadas do programa\033[0m\n\n");
 				}else if(escolha_do_Menu==1){
-					printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece Ajuda para entender melhor como esse programa funciona\033[0m\n\n");
 				}else if(escolha_do_Menu==2){
-					printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso à Criação de Conta\033[0m\n\n");
 				}else if(escolha_do_Menu==3){
-					printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso para conectar com uma conta já existente\033[0m\n\n");
 				}else if(escolha_do_Menu==4){
-					printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso para Sair do programa\033[0m\n\n");
 				}
 				break;
 			case SETA_BAIXO:
@@ -490,15 +490,15 @@ int main(void){
 				}
 				printf("\t        \033[1;32m=======================\033[0m\n\n\n");
 				if(escolha_do_Menu==0){
-					printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso às configurações personalizadas do programa\033[0m\n\n");
 				}else if(escolha_do_Menu==1){
-					printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece Ajuda para entender melhor como esse programa funciona\033[0m\n\n");
 				}else if(escolha_do_Menu==2){
-					printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso à Criação de Conta\033[0m\n\n");
 				}else if(escolha_do_Menu==3){
-					printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso para conectar com uma conta já existente\033[0m\n\n");
 				}else if(escolha_do_Menu==4){
-					printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
+					printf("\n\n\t\033[1;34mFornece acesso para Sair do programa\033[0m\n\n");
 				}
 				break;
 			case CHAVE_ENTER:
@@ -516,11 +516,11 @@ int main(void){
 						
 						do{
 							system("Cls");
-							printf("\nAgor Você estará entrando na área de criação de conta\n");
+							printf("\nAgora Você entrará na área de criação de conta\n");
 							printf("na hora de criar a conta você dará três informações:\n");
-							printf("\n\033[1;32mQuem é o Dono da conta que está criando\nUm UserName que servirá exclusivamente para Log In\nA Senha que Utilizara para Logar sua Conta\033[0m\n\n");
+							printf("\n\033[1;32mQuem é o Dono da conta que está criando\nUm UserName que servirá exclusivamente para Log In\nA Senha que Utilizará para Logar sua Conta\033[0m\n\n");
 							printf("É aconselhado usar dados faceis de se Lembrar\n");
-							printf("Tanto na Senha como no User Name podem ser usados Caracteres especiais\n");
+							printf("Tanto na Senha como no UserName podem ser usados Caracteres especiais\n");
 							printf("Na hora de indicar quem será o Dono da Conta Não use Espaços\n\n");
 							
 							printf("\n\n\t======================================");
@@ -532,7 +532,7 @@ int main(void){
 						}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 	
 						system("Cls");
-						printf("Agora que você concorda com os nossos ideais\n");
+						printf("Agora que você concorda com os nossos Termos\n");
 						Sleep(2000);
 						printf("Vamos criar a sua conta");
 						Sleep(2000);
@@ -569,7 +569,7 @@ int main(void){
 							printf("_");
 						}
 						printf("\n");
-						printf("\nFeito isso Crie uma senha para a conta %s: ", Cadastro_Dono);
+						printf("\nFeito isso Crie uma senha para a conta com dono chamado(a) %s: ", Cadastro_Dono);
 						scanf("%s", Cadastro_Senha);
 						printf("\n_______________________________________");
 						Contador_ch_SingUp = strlen(Cadastro_Dono);
@@ -615,16 +615,16 @@ int main(void){
 						}
 						printf("\t        \033[1;32m=======================\033[0m\n\n\n");
 						if(escolha_do_Menu==0){
-							printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\033[0m\n\n");
+							printf("\n\n\t\033[1;34mFornece acesso às configurações personalizadas do programa\033[0m\n\n");
 						}else if(escolha_do_Menu==1){
-							printf("\n\n\t\033[1;34mTe da Ajuda a entender melhor como esse programa funciona\033[0m\n\n");
+							printf("\n\n\t\033[1;34mFornece Ajuda para entender melhor como esse programa funciona\033[0m\n\n");
 						}else if(escolha_do_Menu==2){
-							printf("\n\n\t\033[1;34mTe da acesso a Criação de Conta\033[0m\n\n");
+							printf("\n\n\t\033[1;34mFornece acesso à Criação de Conta\033[0m\n\n");
 						}else if(escolha_do_Menu==3){
-							printf("\n\n\t\033[1;34mTe da acesso a conectar com uma conta já existente\033[0m\n\n");
+							printf("\n\n\t\033[1;34mFornece acesso para conectar com uma conta já existente\033[0m\n\n");
 						}else if(escolha_do_Menu==4){
-							printf("\n\n\t\033[1;34mTe da acesso a Sair do programa\033[0m\n\n");
-						}	
+							printf("\n\n\t\033[1;34mFornece acesso para Sair do programa\033[0m\n\n");
+						}
 						
 						break;
 					case 3:
@@ -685,11 +685,11 @@ int main(void){
 							do{
 								system("Cls");
 								Sleep(TEMPO_print_coriqueiro);
-								printf("Caso seja a sua primeira vez Logando aqui vai um Micro Tutorial\n");
+								printf("Caso seja a sua primeira vez Logando, aqui vai um Micro Tutorial\n");
 								Sleep(TEMPO_print_coriqueiro);
 								printf("Aparecerá um MENU parecido com o MENU PRINCIPAL\n");
 								Sleep(TEMPO_print_coriqueiro);
-								printf("Será divertido se você fuça-lo\n");
+								printf("E será divertido se você fuçá-lo\n");
 								Sleep(TEMPO_print_coriqueiro);
 								printf("Porém\n");
 								Sleep(TEMPO_print_coriqueiro);
@@ -699,7 +699,7 @@ int main(void){
 								Sleep(TEMPO_print_coriqueiro);
 								printf("Se quiser dar um bom cuidado ao corpo de seu Ente querido\n");
 								Sleep(TEMPO_print_coriqueiro);
-								printf("Vá na parte que diz Serviços e de enter\n");
+								printf("Vá na parte que diz Serviços\n");
 								Sleep(TEMPO_print_coriqueiro);
 								printf("Dentro disso De enter em Serviços Post Mortem\n");
 								printf("\n\n============================");
@@ -759,9 +759,9 @@ int main(void){
 							}
 							printf("\t        \033[1;32m===========================================\033[0m\n");
 							if(escolha_do_Menu==0){
-								printf("\n\n\t\033[1;34mTe dá acesso a assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
+								printf("\n\n\t\033[1;34mFornece acesso para assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
 							}else if(escolha_do_Menu==1){
-								printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
+								printf("\n\n\t\033[1;34mFornece Acesso às configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
 							}else if(escolha_do_Menu==2){
 								printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
 							}else if(escolha_do_Menu==3){
@@ -792,9 +792,9 @@ int main(void){
 										}
 										printf("\t        \033[1;32m===========================================\033[0m\n");			
 										if(escolha_do_Menu==0){
-											printf("\n\n\t\033[1;34mTe dá acesso a assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
+											printf("\n\n\t\033[1;34mFornece acesso para assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
 										}else if(escolha_do_Menu==1){
-											printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
+											printf("\n\n\t\033[1;34mFornece Acesso às configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
 										}else if(escolha_do_Menu==2){
 											printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
 										}else if(escolha_do_Menu==3){
@@ -824,14 +824,14 @@ int main(void){
 										}
 										printf("\t        \033[1;32m===========================================\033[0m\n");	
 										if(escolha_do_Menu==0){
-											printf("\n\n\t\033[1;34mTe dá acesso a assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
+											printf("\n\n\t\033[1;34mFornece acesso para assistencia sobre o programa de forma que você entenda melhor como ele funciona\033[0m\n\n");
 										}else if(escolha_do_Menu==1){
-											printf("\n\n\t\033[1;34mTe da Acesso as configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
+											printf("\n\n\t\033[1;34mFornece Acesso às configurações personalizadas do programa\n\tTanto a configuração do seu perfil como uma configuração geral\033[0m\n\n");
 										}else if(escolha_do_Menu==2){
 											printf("\n\n\t\033[1;34mAcessa os Serviços que a Nossa funeraria disponibiliza\033[0m\n\n");
 										}else if(escolha_do_Menu==3){
 											printf("\n\n\t\033[1;34mSai desse programa e ao mesmo tempo faz Log Out\033[0m");
-										}						
+										}					
 										break;
 									case CHAVE_ENTER:
 										// "Assistencia para o(a) Usuário(a)", "Configurações", "Serviços", "Log Out", "Sair"
@@ -874,7 +874,7 @@ int main(void){
 												if(escolha_do_Menu==0){
 													printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
 												}else if(escolha_do_Menu==1){
-													printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+													printf("\n\n\t\033[1;34mTe permite criar uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
 												}else if(escolha_do_Menu==2){
 													printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
 												}
@@ -907,7 +907,7 @@ int main(void){
 															if(escolha_do_Menu==0){
 																printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
 															}else if(escolha_do_Menu==1){
-																printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+																printf("\n\n\t\033[1;34mTe permite criar uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
 															}else if(escolha_do_Menu==2){
 																printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
 															}
@@ -939,7 +939,7 @@ int main(void){
 															if(escolha_do_Menu==0){
 																printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
 															}else if(escolha_do_Menu==1){
-																printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+																printf("\n\n\t\033[1;34mTe permite criar uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
 															}else if(escolha_do_Menu==2){
 																printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
 															}
@@ -976,7 +976,7 @@ int main(void){
 																	system("Cls");
 																	printf("\n\n\t\t\033[0mConectado ao Cadastro do Post Mortem\n");
 																	printf("\n\n\t\tDe enter\n\n");
-																	system("PAUSE");
+																	getch();
 																	system("Cls");
 																	//CADASTRO PESSOA FÍSICA
 																	Sleep(rand() % 3000+1);
@@ -1028,7 +1028,8 @@ int main(void){
 																				printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
 																			}else if(escolha_do_Menu==2){
 																				printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
-																			}																																					
+																			}
+																																																								
 																		}
 																		else{
 																			printf("Relação com o falecido: ");//relação com morto
@@ -1159,7 +1160,7 @@ int main(void){
 															if(escolha_do_Menu==0){
 																printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
 															}else if(escolha_do_Menu==1){
-																printf("\n\n\t\033[1;34mTe permite criarr uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+																printf("\n\n\t\033[1;34mTe permite criar uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
 															}else if(escolha_do_Menu==2){
 																printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
 															}
