@@ -355,7 +355,7 @@ int main(void){
 	
 	
 	//Variavel dos MENUS
-	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sing Up", "Log In", "Sair"};	
+	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sign Up", "Log In", "Sair"};	
 	char MENU_USUARIO[4][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Serviços", "Sair/Log Out"};
 	char MENU_SERVIÇOS[3][1000] = {"Procurar Confirmação de Pedido", "Criar confirmação de Pedidos", "Serviços Post Mortem"};
 	
@@ -1242,7 +1242,7 @@ int main(void){
 							system("Cls");
 							printf("\n\n\n\033[1;32mInfelizmente a senha ou o UserName estão incorretos\n");
 							printf("Verifique se a Conta que esta tentando acessar exista\n");
-							printf("Se essa conta for inexistente faça o \033[4;97mSing Up\033[0m\n\n");
+							printf("Se essa conta for inexistente faça o \033[4;97mSign Up\033[0m\n\n");
 							
 							printf("\n\n\t==========================================");
 							printf("\n\t|                                        |");
