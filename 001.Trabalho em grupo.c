@@ -34,12 +34,75 @@ enum{
 	
 };
 
+
 static int Get_Code(void){
 	int Code = getch();
 	if(Code == 0 || Code == 224){
 		Code = 256 +getch();
 	}
 	return Code;
+}
+
+
+void Aberrtura_Entrada(void){ 
+
+
+	int Recepcao_Tecla;
+	do{
+		
+	Sleep(100);
+	system("Cls");
+	printf("\033[5;37m\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n     ooooooooo                       cccccccccc  uuuu         uuuu  rrrrrrrrr        sssssssssssss        ooooooooo     ");
+	printf("\n   ooooooooooooo                  ccccccccccccc  uuuu         uuuu  rrrrrrrrrrr    ssssssssssssssss     ooooooooooooo   ");
+	printf("\n oooo         oooo              ccccccccc        uuuu         uuuu  rrrr     rrrr  ssss         ssss  oooo         oooo ");
+	printf("\n oooo         oooo            ccccccc            uuuu         uuuu  rrrrr    rrrr   sssss             oooo         oooo ");
+	printf("\n oooo         oooo            cccc               uuuu         uuuu  rrrrrrrrrrr        ssssss         oooo         oooo ");
+	printf("\n oooo         oooo            cccc               uuuu         uuuu  rrrr rrrr              ssss       oooo         oooo ");
+	printf("\n oooo         oooo            ccccccc            uuuu         uuuu  rrrr  rrrr               ssss     oooo         oooo ");
+	printf("\n oooo         oooo              ccccccccc        uuuu         uuuu  rrrr   rrrr    ssss        ssss   oooo         oooo ");
+	printf("\n   ooooooooooooo                  ccccccccccccc    uuuuuuuuuuuuu    rrrr    rrrr    ssssssssssssssss    ooooooooooooo   ");
+	printf("\n     ooooooooo                       cccccccccc      uuuuuuuuuu     rrrr     rrrr     sssssssssssss       ooooooooo     ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                      \033[5;35mTE APRESENTA\033[5;37m                                                      ");
+	printf("\n                                                                                                                        ");
+	printf("\n                                                     \033[0m\033[1;32m==============                                                     ");
+	printf("\n                                                     |            |                                                     ");	
+	printf("\n                                                     |  \033[1;34mDE ENTER\033[1;32m  |                                                     ");
+	printf("\n                                                     |            |                                                     ");	
+	printf("\n                                                     ==============\033[0m                                                     ");
+	printf("\n                                                                                                                        ");
+
+
+	}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
+	
+
+	/*
+	        cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc          
+ 
+ 	|		       ooooooooo                       cccccccccc  uuuu         uuuu  rrrrrrrrr        sssssssssssss        ooooooooo     
+	|		     ooooooooooooo                  ccccccccccccc  uuuu         uuuu  rrrrrrrrrrr    ssssssssssssssss     ooooooooooooo   
+	|		   oooo         oooo              ccccccccc        uuuu         uuuu  rrrr     rrrr  ssss         ssss  oooo         oooo 
+	|		   oooo         oooo            ccccccc            uuuu         uuuu  rrrrr    rrrr   sssss             oooo         oooo 
+	|		   oooo         oooo            cccc               uuuu         uuuu  rrrrrrrrrrr        ssssss         oooo         oooo 
+	|		   oooo         oooo            cccc               uuuu         uuuu  rrrr rrrr              ssss       oooo         oooo 
+	|		   oooo         oooo            ccccccc            uuuu         uuuu  rrrr  rrrr               ssss     oooo         oooo 
+	|		   oooo         oooo              ccccccccc        uuuu         uuuu  rrrr   rrrr    ssss        ssss   oooo         oooo 
+	|		     ooooooooooooo                  ccccccccccccc    uuuuuuuuuuuuu    rrrr    rrrr    ssssssssssssssss    ooooooooooooo   
+	|		       ooooooooo                       cccccccccc      uuuuuuuuuu     rrrr     rrrr     sssssssssssss       ooooooooo     
+	
+*/
+		
 }
 
 void Codigo_Chave(int qtd_chave){
@@ -375,7 +438,7 @@ int main(void){
 	int convidados,contador;
 	char evento[10];
 //INÍCIO CÓDIGO
-
+	Aberrtura_Entrada();
 	//INFO FUNERÁRIA
 		//nome da funeraria
 		//telefone da funeraria
@@ -389,9 +452,18 @@ int main(void){
 		printf("|                                            |\n");
 		printf("|   \033[1;34mDe Enter para ir para O Menu_do_Inicio\033[0m   |\n");
 		printf("|                                            |\n");
-			printf("==============================================\n\n");
+		printf("==============================================\n\n");
 	}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 	system("Cls");
+	
+	do{
+		printf("Ao criar sua conta você poderá utizá-la a qualquer momento\n\tGraças ao nosso sistema de salvamento\n");
+		printf("\n\n\n==============================================\n");
+		printf("|                                            |\n");
+		printf("|   \033[1;34mDe Enter para ir para O Menu_do_Inicio\033[0m   |\n");
+		printf("|                                            |\n");
+		printf("==============================================\n\n");
+	}while((Recepcao_Tecla = Get_Code()) != CHAVE_ENTER);
 	
 	//CADASTRO
 	
@@ -692,7 +764,7 @@ int main(void){
 								Sleep(TEMPO_print_coriqueiro);
 								printf("Aparecerá um MENU parecido com o MENU PRINCIPAL\n");
 								Sleep(TEMPO_print_coriqueiro);
-								printf("E será divertido se você fuçá-lo\n");
+								printf("E será divertido se você fuça-lo\n");
 								Sleep(TEMPO_print_coriqueiro);
 								printf("Porém\n");
 								Sleep(TEMPO_print_coriqueiro);
@@ -704,7 +776,7 @@ int main(void){
 								Sleep(TEMPO_print_coriqueiro);
 								printf("Vá na parte que diz Serviços\n");
 								Sleep(TEMPO_print_coriqueiro);
-								printf("Dentro disso De enter em Serviços Post Mortem\n");
+								printf("Dentro disso Dê enter em Serviços Post Mortem\n");
 								printf("\n\n============================");
 								printf("\n|                          |");
 								printf("\n|   \033[1;34mDe Enter para Seguir\033[0m   |");
