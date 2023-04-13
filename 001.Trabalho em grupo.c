@@ -371,6 +371,9 @@ int main(void){
 	FILE *Arquivo_UserNames; //  caso for usar o nome do arquivo é "Cofre_de_Users_O_Curso.txt"
 	FILE *Arquivo_Donos; //  caso for usar o nome do arquivo é  "Cofre_de_Donos_O_Curso.txt"
 	
+	//criando variavel para evento fechado ou aberto
+	int convidados,contador;
+	char evento[10];
 //INÍCIO CÓDIGO
 
 	//INFO FUNERÁRIA
@@ -980,14 +983,17 @@ int main(void){
 																	system("Cls");
 																	//CADASTRO PESSOA FÍSICA
 																	Sleep(rand() % 3000+1);
+																	fflush(stdin);
 																	system("Cls");
 																	printf("\nCADASTRO DO ORGANIZADOR\n\n");
 																	printf("Nome: ");//nome pessoa
-																	scanf("%s", nome);
-																	//fgets(nome , 40, stdin);
+																	//scanf("%s", nome);
+																	fgets(nome , 40, stdin);
+																	fflush(stdin);
 																	printf("CPF: ");//cpf pessoa
-																	scanf("%s", cpf);
-																	//fgets(cpf,20,stdin);
+																	//scanf("%s", cpf);
+																	fgets(cpf,20,stdin);
+																	fflush(stdin);
 																	printf("Ano de nascimento: ");//data nascimento pessoa (se de menor cancelar cadastro)
 																	scanf("%d",&ano);
 																	idade=2023-ano;
@@ -1042,9 +1048,9 @@ int main(void){
 																		//print informação
 																			printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
 																			printf("Nome Do Organizador: %s",nome);//nome
-																			printf("\nIdade: %d anos\n",idade);//idade
+																			printf("Idade: %d anos\n",idade);//idade
 																			printf("CPF: %s",cpf);//cpf
-																			printf("\nRelação com o falecido: %s",relacao);//relação com o falecido
+																			printf("Relação com o falecido: %s",relacao);//relação com o falecido
 																			printf("\nEmail para contato: %s",email);//email
 																	
 																		//confirmar cadastro
@@ -1123,7 +1129,32 @@ int main(void){
 																				//transporte
 																					//mortuário->local
 																					//local->enterro/cremação
-																							
+																					
+																				sleep(3000);
+																				system("Cls");
+																				printf("O evento será fechado?: ");
+																				scanf("%s", evento);
+																				
+																				if(strcmp(evento, "Sim")==0 || strcmp(evento, "sim")==0 || strcmp(evento, "S")==0 || strcmp(evento, "s")==0){
+																					printf("\n\nO preço por individuo é de R$ 10,00");
+																					printf("\n\nQuantos individuos atenderão o evento?: ");
+																					scanf("%d", &convidados);
+																					
+																					char nome_dos_convidados[20][convidados];
+																					
+																					for(int i=0;i<convidados;i++){
+																						contador = i + 1;
+																						printf("\n\nDigite o nome do %dº convidado: ", contador);
+																						scanf("%s", nome_dos_convidados[i]);
+																					}
+																					int convidadosvalor = convidados * 10;
+																							printf("O custo total dos convidados é R$%d,00", convidadosvalor);
+																				}
+																				else{
+																					printf("\n\nA cerimônia aberta possui um custo fixo de R$2500,00\n\n");
+																					int cerimonia_aberta = 2500;
+																				}
+																				
 																				
 																				//calcular o valor total da cerimonia (Usando Juros e extras)																	
 																			}	
