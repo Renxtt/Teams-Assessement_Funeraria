@@ -1195,10 +1195,10 @@ int main(void){
 												}
 												system("Cls");
 												Sleep(500);
-												printf("\n\n\t\t\033[2;37mSeção sendo Finalizada\033[0m\n\n");
+												printf("\n\n\t\t\033[2;37mSessão sendo Finalizada\033[0m\n\n");
 												Sleep(rand() % 5000);
 												system("Cls");
-												printf("\n\n\t\tSeção Finalizada\n\n");
+												printf("\n\n\t\tSessão Finalizada\n\n");
 												exit(0);
 												return 0;						
 												break;
@@ -1292,10 +1292,10 @@ int main(void){
 						}
 						system("Cls");
 						Sleep(500);
-						printf("\n\n\t\t\033[2;37mSeção sendo Finalizada\033[0m\n\n");
+						printf("\n\n\t\t\033[2;37mSessão sendo Finalizada\033[0m\n\n");
 						Sleep(rand() % 5000);
 						system("Cls");
-						printf("\n\n\t\tSeção Finalizada\n\n");
+						printf("\n\n\t\tSessão Finalizada\n\n");
 						exit(0);
 						return 0;
 						break;
