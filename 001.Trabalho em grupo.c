@@ -19,7 +19,7 @@
 //DANIEL GAMEPLAYS
 //Pe_brauler
 //Arthur
-
+//Rafael (Renxtt)
 //Objetivo: Construir uma simulação de um site de uma funeraria (o mais complleta possivel)
 
 enum{
