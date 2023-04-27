@@ -416,6 +416,9 @@ int main(void){
 	char Tentativa_Senha[1000], Retirada_Senhas[100][1000];
 	char Retirada_Donos[100][1000];
 	
+	//Variaveis de mortos
+	char tam_caixao, local_ent[70], tipo_pote[70];
+	int t_ent, transp;
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sign Up", "Log In", "Sair"};	
@@ -437,6 +440,7 @@ int main(void){
 	//criando variavel para evento fechado ou aberto
 	int convidados,contador;
 	char evento[10];
+	int cerimonia_aberta;
 //INÍCIO CÓDIGO
 	Aberrtura_Entrada();
 	//INFO FUNERÁRIA
@@ -1211,6 +1215,7 @@ int main(void){
 																					//data(dia)
 																					//numero convidados - informar preço por convidado
 																				
+	
 																				//decoração - opcional
 																					//flores e velas
 																					//retrato do morto
@@ -1218,21 +1223,7 @@ int main(void){
 																				//serviços
 																					//padre
 																					//cortejo
-																				
-																				
-																				//enterro
-																					//modelos pré prontos de caixão com P M G e personalizado
-																					//local do enterro
-																				//cremação
-																					//informar estilos pré-prontos de potes para as cinzas
-																					
-																				//transporte
-																					//mortuário->local
-																					//local->enterro/cremação
-																					
-																				sleep(3000);
-																				system("Cls");
-																				printf("O evento será fechado?: ");
+																			printf("O evento será fechado?: ");
 																				scanf("%s", evento);
 																				
 																				if(strcmp(evento, "Sim")==0 || strcmp(evento, "sim")==0 || strcmp(evento, "S")==0 || strcmp(evento, "s")==0){
@@ -1252,8 +1243,49 @@ int main(void){
 																				}
 																				else{
 																					printf("\n\nA cerimônia aberta possui um custo fixo de R$2500,00\n\n");
-																					int cerimonia_aberta = 2500;
+																					cerimonia_aberta = 2500;
 																				}
+
+																				printf("O cliente será cremado ou enterrado?\n1- Cremado\n2- Enterrado\n\nInsira o número correspondente:");
+																				scanf("%d", &t_ent);
+																				fflush(stdin);
+																				
+																				
+																				//enterro
+																					//modelos pré prontos de caixão com P M G e personalizado
+																				if(t_ent == 2){
+																					printf("\nQual será o tamanho do caixão desejado?\nP- pequeno\nM- Médio\nG- Grande\n\nInsira o tamanho correspondente: ");
+																					scanf("%c", &tam_caixao);
+																					fflush(stdin);
+																			
+																				}
+																				
+																					//local do enterro
+																				//cremação
+																					//informar estilos pré-prontos de potes para as cinzas
+																				if(t_ent == 1){
+																						printf("\nQual será o estilo de pote?\n1- Aço inoxidável\n2- Madeira\n3- Bronze\n4- Biodegradável\n5- Hidrossolúvel\n\nInsira o material:");
+																						fgets(tipo_pote,70,stdin);
+																						strtok(tipo_pote, "\n");
+																						fflush(stdin);
+																				}
+																					
+																				//transporte
+																					//mortuário->local
+																					//local->enterro/cremação
+																				printf("\nO cliente vai precisar do transporte?\nO serviço terá um custo extra de R$1000,00\n1- Sim\n2- Não\n\nInsira o número correspondente: ");
+																				scanf("%d", &transp);
+																				fflush(stdin);
+																			
+																				if(transp == 1){
+																					printf("\nOnde o cliente será buscado?\nInsira o local:");
+																					fgets(local_ent,70,stdin);
+																					strtok(local_ent, "\n");
+																					fflush(stdin);
+																				
+																				}	
+																					
+																			
 																				
 																				
 																				//calcular o valor total da cerimonia (Usando Juros e extras)																	
