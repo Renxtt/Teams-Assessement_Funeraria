@@ -479,7 +479,7 @@ int main(void){
 	char retrato[10];
 	char padre[100];
 	char cortico[10];
-	int calculo;
+//	int calculo;
 		
 	
 	
@@ -1301,10 +1301,10 @@ int main(void){
 																		else{
 																			printf("Relação com o falecido: ");//relação com morto
 																			fgets(relacao,20,stdin);
-																			scanf("%s",&relacao);
+																			scanf("%s", relacao);
 																			printf("Email para contato: ");//email pessoa
 																			fgets(email,40,stdin);
-																			scanf("%s",&email);
+																			scanf("%s", email);
 																		
 																		//print informação
 																			printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
@@ -1491,7 +1491,8 @@ int main(void){
 																			}
 																			else{
 																				printf("\n\nA cerimônia aberta possui um custo fixo de R$2500,00\n\n");
-																				int cerimonia_aberta = 2500;
+																				int cerimonia_aberta;
+																				cerimonia_aberta = 2500;
 																			}
 
 																				printf("\nOnde o Senhor desejaria o local da cerimônia? ");
