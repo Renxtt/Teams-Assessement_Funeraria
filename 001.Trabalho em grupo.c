@@ -395,6 +395,7 @@ void Codigo_Chave(int qtd_chave){
 int main(void){
 	
 	system("title Funeraria Team EQ4");
+	system("color f c");
 	
 	time_t tempo;
 	srand((unsigned) time(&tempo));
@@ -416,9 +417,6 @@ int main(void){
 	char Tentativa_Senha[1000], Retirada_Senhas[100][1000];
 	char Retirada_Donos[100][1000];
 	
-	//Variaveis de mortos
-	char tam_caixao, local_ent[70], tipo_pote[70];
-	int t_ent, transp;
 	
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sign Up", "Log In", "Sair"};	
@@ -440,7 +438,50 @@ int main(void){
 	//criando variavel para evento fechado ou aberto
 	int convidados,contador;
 	char evento[10];
-	int cerimonia_aberta;
+	
+	//arquivo do Morto
+	FILE *arq_cpf_morto;
+	FILE *arq_nome_morto;
+	FILE *arq_altura_morto;
+	FILE *arq_largura_morto;
+	FILE *arq_peso_morto;
+	
+	
+	
+	FILE *arq_cerimonia_local;
+	FILE *arq_cerimonia_data;
+	
+	//decoração
+	
+	
+	FILE *arq_deco_flores;
+	FILE *arq_deco_velas;
+	FILE *arq_deco_retrato;
+	
+	
+	//serviços
+	FILE *arq_servi_padre;
+	FILE *arq_servi_cortico;
+	
+	
+	//preço total do serviço
+	
+	FILE *arq_calculo_soma;
+	
+	//variaveis para 
+	char cpf_morto[100],nome_morto[100];
+	float  altura_morto,peso_morto,largura_morto;
+	char cerimo_local[100], cerimo_data[100];
+	char deco[15];
+	char cores[15];
+	int velas;
+	char retrato[10];
+	char padre[100];
+	char cortico[10];
+	int calculo;
+		
+	
+	
 //INÍCIO CÓDIGO
 	Aberrtura_Entrada();
 	//INFO FUNERÁRIA
@@ -1215,7 +1256,6 @@ int main(void){
 																					//data(dia)
 																					//numero convidados - informar preço por convidado
 																				
-	
 																				//decoração - opcional
 																					//flores e velas
 																					//retrato do morto
@@ -1223,7 +1263,285 @@ int main(void){
 																				//serviços
 																					//padre
 																					//cortejo
-																			printf("O evento será fechado?: ");
+																				
+																				
+																				//enterro
+																					//modelos pré prontos de caixão com P M G e personalizado
+																					//local do enterro
+																				//cremação
+																					//informar estilos pré-prontos de potes para as cinzas
+																					
+																				//transporte
+																					//mortuário->local
+																					//local->enterro/cremação
+																			arq_cpf_morto = fopen("cpf_morto_base.txt", "a");
+																			
+																			
+																				if(arq_cpf_morto==0){
+																				printf("Erro de leitura do cpf do falecido" ); 
+																				exit(0);
+																				
+																			}
+																				printf("\nDigite o cpf do falecido: ");
+																				scanf("%s",cpf_morto);
+																			
+																			fprintf(arq_cpf_morto,"%s\n",cpf_morto);	
+																			fclose(arq_cpf_morto);
+																			
+																			arq_nome_morto = fopen("nome_morto_base.txt","a");
+																			
+																				if(arq_nome_morto ==0){
+																				printf("Erro de leitura do nome do falecido");
+																				exit(0);
+																			}
+																				printf("\nDigite o nome do falecido: ");
+																				fflush(stdin);
+																				fgets(nome_morto, 100, stdin);
+																			
+																			
+																			
+																			fprintf(arq_nome_morto,"%s\n",nome_morto); 
+																			fclose(arq_nome_morto);
+																			
+																			
+																			arq_altura_morto = fopen("altura_morto_base.txt","a");
+																			
+																				if(arq_altura_morto ==0){
+																				printf("Erro de leitura na altura do falecido.");
+																				
+																			}
+																				printf("\nDigite aqui a altura do falecido: ");
+																				scanf("%f",&altura_morto);
+																				
+																			
+																			fprintf(arq_altura_morto,"%.2f\n",altura_morto);
+																			fclose(arq_altura_morto);
+																			
+																			
+																			
+																			arq_peso_morto = fopen("peso_morto_base.txt","a");
+																			
+																				if(arq_peso_morto ==0){
+																				printf("Erro de leitura no peso do falecido.");
+																			}
+																			
+																				printf("\nDigite aqui o peso do falecido em kg: ");
+																				scanf("%f",&peso_morto);
+																			
+																			fprintf(arq_peso_morto,"%.2f\n",peso_morto);
+																			fclose(arq_peso_morto);
+																			
+																			
+																			
+																			arq_largura_morto = fopen("largura_morto_base.txt","a");
+																			
+																				if(arq_largura_morto ==0){
+																				printf("Erro de leitura na largura do falecido.");
+																			}
+																			
+																				printf("\nDigite a largura do falecido: ");
+																				scanf("%f",&largura_morto);
+																			
+																			fprintf(arq_largura_morto,"%.2f\n",largura_morto);
+																			fclose(arq_altura_morto);
+																			
+																			
+																			system("Cls");
+																			arq_cerimonia_local = fopen("cerimonia_local.txt","a");
+																			
+																				if(arq_cerimonia_local == 0){
+																				printf("Erro de leitura em cerimonia local");
+																				
+																			}
+																				printf("\nOnde o Senhor desejaria o local da cerimônia? ");
+																				printf("\n");
+																				printf("\n ");
+																				fflush(stdin);
+																				fgets(cerimo_local,100,stdin);
+																			
+																			fprintf(arq_cerimonia_local,"%s\n",cerimo_local);
+																			fclose(arq_cerimonia_local);
+																			
+																			
+																			
+																			arq_cerimonia_data = fopen("cerimonia_data.txt","a");
+																			
+																				if(arq_cerimonia_data == 0){
+																				printf("Erro de leitura em cerimonia data. ");
+																				
+																			}
+																				printf("\nDigite a data da cerimônia do falecido: ");
+																				fgets(cerimo_data,100,stdin);
+																			
+																			fprintf(arq_cerimonia_data,"%s\n",cerimo_data);
+																			fclose(arq_cerimonia_data);
+																			
+																			system("Cls");
+																			
+																			arq_deco_flores = fopen("decoracao_morto_flor.txt","a");
+																			
+																			
+																			
+																			if(arq_deco_flores == 0){
+																				printf("Erro de leitura.");
+																		         	
+																		
+																			}
+																			
+																			printf("O Senhor gostaria uma decoração personalizada?");
+																			printf("\n S/N");
+																			
+																			printf("\n\nOpção: ");
+																			scanf("%s",deco);
+																				
+																			
+																				
+																				system("Cls");
+																				
+																				if(strcmp(deco,"Sim") == 0|| strcmp(deco,"sim") == 0|| strcmp(deco,"s") == 0 || strcmp(deco,"S") ==0) {
+																					
+																						printf("\nNo caixão, oferecemos um menu de algumas flores para a decoração: ");
+																						Sleep(1000);
+																						printf("\n Rosas \n Margarida \n Lirio  \n  Todas");
+																						printf("\n");
+																						Sleep(1000);
+																						printf("\nUma porção de 40 rosas vale R$ 98,50\nUma porção de 40 margaridas vale R$ 110,20.\nUma porção de 40  Lirias vale R$136,80");
+																						Sleep(1000);
+																						printf("\n\nCaso o Senhor queira todas as flores, terá um desconto de 25%c", 37);
+																						printf("\n");
+																						
+																						Sleep(2000);
+																						printf("\n\nQuais tipos de flores você deseja no funeral? \n");		
+																						scanf("%s",cores);	
+																						
+																				
+																							 	if(strcmp(cores,"Rosas")== 0){	 
+																									printf("\nSelecionado opção rosas. ");
+																								}
+																												
+																								else if(strcmp(cores,"Margarita")== 0){							 
+																									printf("\nSelecionado opção Margarida. ");
+																								}
+																												
+																							
+																								else if(strcmp(cores,"Lirio") ==0){								
+																									printf("\nSelecionado opção Lirio. ");
+																								}
+																				
+																				fprintf(arq_deco_flores,"%s\n",cores);
+																				fclose(arq_deco_flores);						
+																				
+																				Sleep(1000);
+																				system("Cls");
+																				printf("\n");
+																				
+																				arq_deco_velas = fopen("decoracao_morto_vela.txt","a");
+																				
+																					if(arq_deco_velas == 0){
+																						printf("Erro de leitura de vela");
+																				}
+																				
+																				printf("Quantos pacotes de velas você deseja, lembrando que um pacote de 6 velas custam R$ 11,55?\n");
+																				scanf("%d",&velas);
+																				
+																				fprintf(arq_deco_velas,"%d\n",velas);		
+																				fclose(arq_deco_velas);
+																						
+																													
+																						
+																				}else if(strcmp(deco,"Não") ==0 || strcmp(deco,"nao") == 0 || strcmp(deco,"não") == 0 || strcmp(deco,"Nao")  == 0 || strcmp(deco,"N") == 0|| strcmp(deco,"n") ==0){
+																					printf("Certo! Sem decoração personalizada.");
+																					fprintf(arq_deco_flores, "0");
+																				}
+																				
+																				
+																				
+																				
+																				arq_deco_retrato = fopen("decoracao_morto_retrato.txt","a");
+																					
+																					if(arq_deco_retrato == 0){
+																						printf("Erro de leitura do retrato");
+																					}
+																				
+																				system("Cls");
+																				
+																				printf("Quais são as dimensões do retrato do falecido? \n");
+																				scanf("%s",retrato);
+																				
+																				fprintf(arq_deco_retrato,"%s\n",retrato);
+																				
+																				
+																				system("Cls");
+																				
+																				arq_servi_padre = fopen("servico_padre.txt","a");
+																				
+																				
+																				if(arq_servi_padre == 0){
+																					printf("Erro de leitura de padre.");
+																				}
+																			
+																			
+																				
+																			
+																				printf("\nO serviço do padre varia de acordo com o serviço desejado.");
+																				Sleep(1000);
+																				printf("\nLeitura de passagens biblicas R$65,41.");
+																				Sleep(1000);
+																				printf("\nA oração pelo falecido(a) R$ 51,90.");
+																				Sleep(1000);
+																				
+																				
+																				
+																				Sleep(1000);
+																				printf("\nOpção: ");
+																				fflush(stdin);
+																				fgets(padre,100,stdin);
+																				
+																				
+																		
+																				
+																				fprintf(arq_servi_padre,"%s\n",padre);
+																				
+																				fclose(arq_servi_padre);
+																				
+																				
+																				arq_servi_cortico = fopen("arquivo_cortico.txt","a");
+																				
+																				if(arq_servi_cortico == 0){
+																					printf("Erro de leitura do cortiço");
+																					
+																			}
+																				
+																				printf("Gostaria de ter uma decoração no transporte? ");
+																				printf("\nS/N");
+																				printf("Opção: ");
+																				scanf("%s",cortico);
+																				
+																				
+																				
+																				if(strcmp(cortico,"Sim") == 0|| strcmp(cortico,"sim") == 0|| strcmp(cortico,"s") == 0 || strcmp(cortico,"S") ==0){
+																					printf("Certo. Aqui são as opções disponiveis.");
+																		
+																			}	else if(strcmp(cortico,"Não") ==0 || strcmp(cortico,"nao") == 0 || strcmp(cortico,"não") == 0 || strcmp(cortico,"Nao")  == 0 || strcmp(cortico,"N") == 0|| strcmp(cortico,"n") ==0){
+																					printf("Certo. Sem decoração no costiço.");
+																					
+																				}
+																				
+																				
+																				system("Cls");
+																				
+																				arq_calculo_soma = fopen("valor_pagamento.txt","a");
+																				
+																				if(arq_calculo_soma == 0){
+																					printf("Erro de leitura de valor de pagamento.");
+																				}
+																				
+																				printf("Certo, calculando o valor a ser pago pelo serviço.");
+																					
+																					
+																				sleep(3000);
+																				system("Cls");
+																				printf("O evento será fechado?: ");
 																				scanf("%s", evento);
 																				
 																				if(strcmp(evento, "Sim")==0 || strcmp(evento, "sim")==0 || strcmp(evento, "S")==0 || strcmp(evento, "s")==0){
@@ -1243,49 +1561,8 @@ int main(void){
 																				}
 																				else{
 																					printf("\n\nA cerimônia aberta possui um custo fixo de R$2500,00\n\n");
-																					cerimonia_aberta = 2500;
+																					int cerimonia_aberta = 2500;
 																				}
-
-																				printf("O cliente será cremado ou enterrado?\n1- Cremado\n2- Enterrado\n\nInsira o número correspondente:");
-																				scanf("%d", &t_ent);
-																				fflush(stdin);
-																				
-																				
-																				//enterro
-																					//modelos pré prontos de caixão com P M G e personalizado
-																				if(t_ent == 2){
-																					printf("\nQual será o tamanho do caixão desejado?\nP- pequeno\nM- Médio\nG- Grande\n\nInsira o tamanho correspondente: ");
-																					scanf("%c", &tam_caixao);
-																					fflush(stdin);
-																			
-																				}
-																				
-																					//local do enterro
-																				//cremação
-																					//informar estilos pré-prontos de potes para as cinzas
-																				if(t_ent == 1){
-																						printf("\nQual será o estilo de pote?\n1- Aço inoxidável\n2- Madeira\n3- Bronze\n4- Biodegradável\n5- Hidrossolúvel\n\nInsira o material:");
-																						fgets(tipo_pote,70,stdin);
-																						strtok(tipo_pote, "\n");
-																						fflush(stdin);
-																				}
-																					
-																				//transporte
-																					//mortuário->local
-																					//local->enterro/cremação
-																				printf("\nO cliente vai precisar do transporte?\nO serviço terá um custo extra de R$1000,00\n1- Sim\n2- Não\n\nInsira o número correspondente: ");
-																				scanf("%d", &transp);
-																				fflush(stdin);
-																			
-																				if(transp == 1){
-																					printf("\nOnde o cliente será buscado?\nInsira o local:");
-																					fgets(local_ent,70,stdin);
-																					strtok(local_ent, "\n");
-																					fflush(stdin);
-																				
-																				}	
-																					
-																			
 																				
 																				
 																				//calcular o valor total da cerimonia (Usando Juros e extras)																	
@@ -1499,8 +1776,6 @@ int main(void){
 				
 		}
 	}
-	
-
 	
 	
 		
