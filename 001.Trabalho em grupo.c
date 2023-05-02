@@ -8,6 +8,7 @@
 #include <conio.h>
 #include <unistd.h>
 
+
 #define MAX_Menu_Inicial 5
 #define MAX_Menu_Usuario 4
 #define TEMPO_print_coriqueiro 700
@@ -421,7 +422,7 @@ int main(void){
 	//Variavel dos MENUS
 	char MENU_PRINCIPAL[5][1000] = {"Configurações", "Assitencia", "Sign Up", "Log In", "Sair"};	
 	char MENU_USUARIO[4][1000] = {"Assistencia para o(a) Usuário(a)", "Configurações", "Serviços", "Sair/Log Out"};
-	char MENU_SERVIÇOS[3][1000] = {"Procurar Confirmação de Pedido", "Criar confirmação de Pedidos", "Serviços Post Mortem"};
+	char MENU_SERVIÇOS[3][1000] = {"Procurar Confirmação de Pedido", "Configurações", "Serviços Post Mortem"};
 	
 	//Crinado variaveis auxiliares
 	int Contador_de_Casas_inicial[10], Contador_de_Casas_Usuario[10], Contador_de_Casas_Other_servico[10];
@@ -625,10 +626,85 @@ int main(void){
 				switch (escolha_do_Menu) {
 					case 0:
 						//Configurações
+						system("Cls");
+						printf("Infelizmente esse sistema está fora de ar\nVolte mais tarde");
+						printf("\n\n\n============================\n");
+						printf("|                          |\n");
+						printf("|   \033[1;34mDe Enter para Seguir\033[0;32m   |\n");
+						printf("|                          |\n");
+						printf("============================\n\n");
+						getch();
+						fflush(stdin);
+						printf("\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+						for(int i=0;i<MAX_Menu_Inicial;i++){
+							if(escolha_do_Menu==i){
+								printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+								for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+									printf(" ");
+								}
+								printf("\033[1;32m|\033[0m\n");
+							}else{
+								printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+								for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+									printf(" ");
+								}
+								printf("\033[1;32m|\033[0m\n");
+							}
+						}
+						printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+						if(escolha_do_Menu==0){
+							printf("\n\n\t\033[1;34mFornece acesso às configurações personalizadas do programa\033[0m\n\n");
+						}else if(escolha_do_Menu==1){
+							printf("\n\n\t\033[1;34mFornece Ajuda para entender melhor como esse programa funciona\033[0m\n\n");
+						}else if(escolha_do_Menu==2){
+							printf("\n\n\t\033[1;34mFornece acesso à Criação de Conta\033[0m\n\n");
+						}else if(escolha_do_Menu==3){
+							printf("\n\n\t\033[1;34mFornece acesso para conectar com uma conta já existente\033[0m\n\n");
+						}else if(escolha_do_Menu==4){
+							printf("\n\n\t\033[1;34mFornece acesso para Sair do programa\033[0m\n\n");
+						}				
 						
 						break;
 					case 1:
 						//Assitencia
+						printf("Esse trabalho foi feito para construir uma simulação de um site de uma funeraria feita em linguagem C\nPelos seguintes autores: \n\tDaniel Langner Jager\n\tArthur De Mattos Colodel\n\tPaola Romeu Bronzatti\n\tRafael Lemos Nunes\n\tMaria Luiza de Oliveira Batistel\n\tAllan Takeshi Morimoto");
+						printf("\n\n\n============================\n");
+						printf("|                          |\n");
+						printf("|   \033[1;34mDe Enter para Seguir\033[0;32m   |\n");
+						printf("|                          |\n");
+						printf("============================\n\n");
+						getch();
+						fflush(stdin);
+						
+						printf("\t        \033[1;32m====\033[1;35mMENU  PRINCIPAL\033[1;32m====\033[0m\n");
+						for(int i=0;i<MAX_Menu_Inicial;i++){
+							if(escolha_do_Menu==i){
+								printf("\t\t\033[1;32m|\033[0m\033[4;31m -> %s\033[0m", MENU_PRINCIPAL[i]);
+								for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+									printf(" ");
+								}
+								printf("\033[1;32m|\033[0m\n");
+							}else{
+								printf("\t\t\033[1;32m|\033[0m    %s", MENU_PRINCIPAL[i]);
+								for(int j=0;j<Contador_de_Casas_inicial[i];j++){
+									printf(" ");
+								}
+								printf("\033[1;32m|\033[0m\n");
+							}
+						}
+						printf("\t        \033[1;32m=======================\033[0m\n\n\n");
+						if(escolha_do_Menu==0){
+							printf("\n\n\t\033[1;34mFornece acesso às configurações personalizadas do programa\033[0m\n\n");
+						}else if(escolha_do_Menu==1){
+							printf("\n\n\t\033[1;34mFornece Ajuda para entender melhor como esse programa funciona\033[0m\n\n");
+						}else if(escolha_do_Menu==2){
+							printf("\n\n\t\033[1;34mFornece acesso à Criação de Conta\033[0m\n\n");
+						}else if(escolha_do_Menu==3){
+							printf("\n\n\t\033[1;34mFornece acesso para conectar com uma conta já existente\033[0m\n\n");
+						}else if(escolha_do_Menu==4){
+							printf("\n\n\t\033[1;34mFornece acesso para Sair do programa\033[0m\n\n");
+						}
+											
 						break;
 					case 2:
 						//Sing Up
@@ -962,7 +1038,14 @@ int main(void){
 											case 1:
 												//Configurações
 												system("Cls");
-												printf("Infelizmente esse serviço está indisponivel");
+												printf("Infelizmente esse sistema está fora de ar\nVolte mais tarde");
+												printf("\n\n\n============================\n");
+												printf("|                          |\n");
+												printf("|   \033[1;34mDe Enter para Seguir\033[0;32m   |\n");
+												printf("|                          |\n");
+												printf("============================\n\n");
+												getch();
+												fflush(stdin);
 												printf("\t        \033[1;32m==============\033[1;35mMENU DO USUÁRIO\033[1;32m==============\033[0m\n");
 												for(int i=0;i<MAX_Menu_Usuario;i++){
 													if(escolha_do_Menu==i){
@@ -1103,7 +1186,40 @@ int main(void){
 																	
 																	break;
 																case 1:
-																	//Criar confirmação de Pedidos
+																	// confi
+																	printf("Infelizmente esse sistema está fora de ar\nVolte mais tarde");
+																	printf("\n\n\n============================\n");
+																	printf("|                          |\n");
+																	printf("|   \033[1;34mDe Enter para Seguir\033[0;32m   |\n");
+																	printf("|                          |\n");
+																	printf("============================\n\n");
+																	getch();
+																	fflush(stdin);
+																	printf("\t        \033[1;32m============\033[1;35mMENU DOS SERVIÇOS\033[1;32m============\033[0m\n");
+																	for(int i=0;i<MAX_Menu_Servicos;i++){
+																		if(escolha_do_Menu==i){
+																			printf("\t\t\033[1;32m|\033[0m   \033[4;31m-> %s\033[0m", MENU_SERVIÇOS[i]);
+																			for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																				printf(" ");
+																			}
+																			printf("\033[1;32m|\033[0m\n");
+																		}else{
+																			printf("\t\t\033[1;32m|\033[0m      %s", MENU_SERVIÇOS[i]);
+																			for(int j=0;j<Contador_de_Casas_Other_servico[i];j++){
+																				printf(" ");
+																			}
+																			printf("\033[1;32m|\033[0m\n");	
+																		}
+																	}
+																	printf("\t        \033[1;32m=========================================\033[0m\n");
+																	
+																	if(escolha_do_Menu==0){
+																		printf("\n\n\t\033[1;34mTe permite pesquisar entre os pedidos já existentes usando a palavra chave\033[0m\n\n");
+																	}else if(escolha_do_Menu==1){
+																		printf("\n\n\t\033[1;34mTe permite criar uma confirmação de pedido usando a chave recebica na criação desse pedido\033[0m\n\n");
+																	}else if(escolha_do_Menu==2){
+																		printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
+																	}																
 																	
 																	
 																	break;
