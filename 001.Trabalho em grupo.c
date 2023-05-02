@@ -469,6 +469,15 @@ int main(void){
 	
 	FILE *arq_calculo_soma;
 	
+	FILE *arq_Nome_vivo; //"Arquivo_Nome_Vivo.txt", "a"
+	FILE *arq_ano_vivo; //"Arquivo_Ano_Vivo.txt", "a" 
+	FILE *arq_cpf_vivo; //"Arquivo_cpf_vivo.txt", "a"
+	FILE *arq_relacao_vivo; //"Arquivo_relacao_vivo.txt", "a"
+	FILE *arq_email_vivo; //"Arquivo_email_vivo.txt", "a"
+	FILE *arq_qtd_Convidados;
+	
+	
+	
 	//variaveis para 
 	char cpf_morto[100],nome_morto[100];
 	float  altura_morto,peso_morto,largura_morto;
@@ -1226,6 +1235,26 @@ int main(void){
 																case 2:
 																	//Serviços Post Mortem
 																	//adicionar arquivo fopen "a" append
+																	
+																	//nome do vivo
+																	//cpf do vivo
+																	//ano de nascimento
+																	//relação do vivo e morto
+																	//email do vivo
+																//	FILE *arq_Nome_vivo; //"Arquivo_Nome_Vivo.txt", "a"
+																//	FILE *arq_ano_vivo; //"Arquivo_Ano_Vivo.txt", "a" 
+																//	FILE *arq_cpf_vivo; //"Arquivo_cpf_vivo.txt", "a"
+																//	FILE *arq_relacao_vivo; //"Arquivo_relacao_vivo.txt", "a"
+																//	FILE *arq_email_vivo;//"Arquivo_email_vivo.txt", "a"
+																					
+																	
+																	arq_Nome_vivo = fopen("Arquivo_Nome_Vivo.txt", "a");
+																	arq_ano_vivo = fopen("Arquivo_Ano_Vivo.txt", "a" );
+																	arq_cpf_vivo = fopen("Arquivo_cpf_vivo.txt", "a");
+																	arq_relacao_vivo = fopen("Arquivo_relacao_vivo.txt", "a");
+																	arq_email_vivo = fopen("Arquivo_email_vivo.txt", "a");
+																	
+																	
 																	system("Cls");
 																	for(int i=0;i<5;i++){
 																		//TODO
@@ -1236,6 +1265,7 @@ int main(void){
 																			printf(".");
 																		}
 																	}
+																	
 																	Sleep(rand() % 3000+1);
 																	system("Cls");
 																	printf("\n\n\t\t\033[0mConectado ao Cadastro do Post Mortem\n");
@@ -1299,6 +1329,10 @@ int main(void){
 																																																								
 																		}
 																		else{
+
+																			
+																			
+																			
 																			printf("Relação com o falecido: ");//relação com morto
 																			fgets(relacao,20,stdin);
 																			scanf("%s", relacao);
@@ -1306,6 +1340,8 @@ int main(void){
 																			fgets(email,40,stdin);
 																			scanf("%s", email);
 																		
+
+																			
 																		//print informação
 																			printf("\n\nCONFIRMAÇÃO CADASTRO\n\n");
 																			printf("Nome Do Organizador: %s",nome);//nome
@@ -1317,7 +1353,19 @@ int main(void){
 																		//confirmar cadastro
 																			printf("\n\nConfirmar Cadastro?\nSim-1\tNão-2\n");
 																			scanf("%d",&confirma);
-																		
+
+																			fprintf(arq_Nome_vivo, "%s", nome);
+																			fprintf(arq_ano_vivo, "%d", &ano);
+																			fprintf(arq_cpf_vivo, "%s", cpf);
+																			fprintf(arq_relacao_vivo, "%s", relacao);
+																			fprintf(arq_email_vivo, "%", email);
+																			
+																			fclose(arq_Nome_vivo);
+																			fclose(arq_ano_vivo);
+																			fclose(arq_cpf_vivo);
+																			fclose(arq_relacao_vivo);
+																			fclose(arq_email_vivo); 
+																			
 																			if(confirma==2){
 																				//adicionar fclose
 																				do{
@@ -1356,8 +1404,13 @@ int main(void){
 																				}else if(escolha_do_Menu==2){
 																					printf("\n\n\t\033[1;34mTe permite criar um Pedido de cerimonia chamado de Post Mortem\033[0m\n\n");
 																				}
+
+
 																			}
+																			
 																			else{
+																				
+																				arq_qtd_Convidados = fopen("Arquivo_qtd_Convidados", "a");
 																				
 																				//adicionar fprintf 
 																				//CADASTRO MORTO
@@ -1486,9 +1539,13 @@ int main(void){
 																					printf("\n\nDigite o nome do %dº convidado: ", contador);
 																					scanf("%s", nome_dos_convidados[i]);
 																				}
+																				fprintf(arq_qtd_Convidados, "%d", contador);
+																				fclose(arq_qtd_Convidados);
+																				
 																				int convidadosvalor = convidados * 10;
 																						printf("O custo total dos convidados é R$%d,00", convidadosvalor);
 																			}
+																			
 																			else{
 																				printf("\n\nA cerimônia aberta possui um custo fixo de R$2500,00\n\n");
 																				int cerimonia_aberta;
