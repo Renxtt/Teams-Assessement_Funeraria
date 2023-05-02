@@ -395,7 +395,6 @@ void Codigo_Chave(int qtd_chave){
 int main(void){
 	
 	system("title Funeraria Team EQ4");
-	system("color f c");
 	
 	time_t tempo;
 	srand((unsigned) time(&tempo));
