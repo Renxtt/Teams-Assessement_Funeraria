@@ -395,7 +395,8 @@ void Codigo_Chave(int qtd_chave){
 int main(void){
 	
 	system("title Funeraria Team EQ4");
-	
+	system("color 02");
+	system("Cls");
 	time_t tempo;
 	srand((unsigned) time(&tempo));
 	setlocale(LC_ALL, "portuguese");
@@ -1352,6 +1353,31 @@ int main(void){
 																				printf("Erro de leitura em cerimonia local");
 																				
 																			}
+
+																			system("Cls");
+																			printf("O evento será fechado?: ");
+																			scanf("%s", evento);
+																			
+																			if(strcmp(evento, "Sim")==0 || strcmp(evento, "sim")==0 || strcmp(evento, "S")==0 || strcmp(evento, "s")==0){
+																				printf("\n\nO preço por individuo é de R$ 10,00");
+																				printf("\n\nQuantos individuos atenderão o evento?: ");
+																				scanf("%d", &convidados);
+																					
+																				char nome_dos_convidados[20][convidados];
+																				
+																				for(int i=0;i<convidados;i++){
+																					contador = i + 1;
+																					printf("\n\nDigite o nome do %dº convidado: ", contador);
+																					scanf("%s", nome_dos_convidados[i]);
+																				}
+																				int convidadosvalor = convidados * 10;
+																						printf("O custo total dos convidados é R$%d,00", convidadosvalor);
+																			}
+																			else{
+																				printf("\n\nA cerimônia aberta possui um custo fixo de R$2500,00\n\n");
+																				int cerimonia_aberta = 2500;
+																			}
+
 																				printf("\nOnde o Senhor desejaria o local da cerimônia? ");
 																				printf("\n");
 																				printf("\n ");
@@ -1512,8 +1538,8 @@ int main(void){
 																			}
 																				
 																				printf("Gostaria de ter uma decoração no transporte? ");
-																				printf("\nS/N");
-																				printf("Opção: ");
+																				printf("\nS/N ");
+																				printf("\n\nOpção: ");
 																				scanf("%s",cortico);
 																				
 																				
@@ -1538,30 +1564,8 @@ int main(void){
 																				printf("Certo, calculando o valor a ser pago pelo serviço.");
 																					
 																					
-																				sleep(3000);
-																				system("Cls");
-																				printf("O evento será fechado?: ");
-																				scanf("%s", evento);
-																				
-																				if(strcmp(evento, "Sim")==0 || strcmp(evento, "sim")==0 || strcmp(evento, "S")==0 || strcmp(evento, "s")==0){
-																					printf("\n\nO preço por individuo é de R$ 10,00");
-																					printf("\n\nQuantos individuos atenderão o evento?: ");
-																					scanf("%d", &convidados);
-																					
-																					char nome_dos_convidados[20][convidados];
-																					
-																					for(int i=0;i<convidados;i++){
-																						contador = i + 1;
-																						printf("\n\nDigite o nome do %dº convidado: ", contador);
-																						scanf("%s", nome_dos_convidados[i]);
-																					}
-																					int convidadosvalor = convidados * 10;
-																							printf("O custo total dos convidados é R$%d,00", convidadosvalor);
-																				}
-																				else{
-																					printf("\n\nA cerimônia aberta possui um custo fixo de R$2500,00\n\n");
-																					int cerimonia_aberta = 2500;
-																				}
+																				Sleep(3000);
+
 																				
 																				
 																				//calcular o valor total da cerimonia (Usando Juros e extras)																	
