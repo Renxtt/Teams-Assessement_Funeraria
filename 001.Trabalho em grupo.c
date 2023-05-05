@@ -1342,6 +1342,8 @@ int main(void){
 																	fclose(arq_email_vivo); //"Arquivo_email_vivo.txt", "a"
 																	fclose(arq_qtd_Convidados); 
 																		//imprimir nota fiscal
+															
+															
 																	printf("Digite o Código que deseja Buscar: ");
 																	fgets(Pesquisa, 100, stdin);
 																	fflush(stdin);
